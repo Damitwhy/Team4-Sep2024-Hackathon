@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Instrument, Sample, AudioSetup
+
+from .models import AudioSetup, Instrument, Sample
+
 
 @admin.register(Instrument)
 class InstrumentAdmin(admin.ModelAdmin):
@@ -7,11 +9,13 @@ class InstrumentAdmin(admin.ModelAdmin):
     search_fields = ('name', 'type')
     list_filter = ('type',)
 
+
 @admin.register(Sample)
 class SampleAdmin(admin.ModelAdmin):
     list_display = ('note', 'instrument', 'duration')
     search_fields = ('note', 'instrument__name')
     list_filter = ('instrument',)
+
 
 @admin.register(AudioSetup)
 class AudioSetupAdmin(admin.ModelAdmin):
