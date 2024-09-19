@@ -1,42 +1,47 @@
 from django.db import models
 
 
-# Model to represent a musical instrument (e.g., Synthesizers, Samplers)
 class Instrument(models.Model):
-    name = models.CharField(max_length=100)  # Instrument name
-    type = models.CharField(
-        max_length=100,
-        choices=[
-            ('Synth', 'Synthesizer'),
-            ('Sampler', 'Sampler'),
-            ('PolySynth', 'Polyphonic Synthesizer'),
-        ],
-    )  # Instrument type (synth, sampler, etc.)
-    description = models.TextField()  # Description of the instrument
+    """Represents a musical instrument with a name, type, and description."""
+
+    INSTRUMENT_TYPES = [
+        ('SYNTH', 'Synthesizer'),
+        ('SAMPLER', 'Sampler'),
+        ('POLY_SYNTH', 'Polyphonic Synthesizer'),
+    ]
+
+    name = models.CharField(max_length=100)
+    type = models.CharField(max_length=20, choices=INSTRUMENT_TYPES)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
 
 
-# Model to represent a sample (e.g., audio file)
 class Sample(models.Model):
+    """Represents an audio sample associated with an instrument."""
+
     instrument = models.ForeignKey(
-        Instrument, related_name='samples', on_delete=models.CASCADE
+        Instrument,
+        related_name='samples',
+        on_delete=models.CASCADE,
     )
-    note = models.CharField(max_length=10)  # Note (e.g., C4, D#2)
-    file = models.FileField(upload_to='samples/')  # Audio file
-    duration = models.FloatField()  # Duration in seconds
+    note = models.CharField(max_length=10)
+    file = models.FileField(upload_to='samples/')
+    duration = models.DurationField()
 
     def __str__(self):
-        return f'{self.note} sample for {self.instrument.name}'
+        return f'{self.note} - {self.instrument.name}'
 
 
-# Model to represent an audio setup where instruments and effects are connected
 class AudioSetup(models.Model):
-    name = models.CharField(max_length=100)  # Name of the setup
-    instruments = models.ManyToManyField(
-        Instrument
-    )  # Instruments used in the setup
+    """Represents an audio setup consisting of multiple instruments."""
+
+    name = models.CharField(max_length=100)
+    instruments = models.ManyToManyField(Instrument, related_name='setups')
 
     def __str__(self):
         return self.name
+
+    def get_instrument_count(self):
+        return self.instruments.count()
