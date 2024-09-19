@@ -11,3 +11,4 @@ db.json
 .env
 debug.log
 db.sqlite3
+staticfiles/
