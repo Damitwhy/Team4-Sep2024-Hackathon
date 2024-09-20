@@ -5,32 +5,91 @@
 
    <div class="container">
     <div id="piano">
-      <div class="keys">
-        <div class="key white">
-          <div class="key black">
-          </div>
+        <div class="keys">
+            <div class="key white" data-note="C"></div>
+            <div class="key black" data-note="C#"></div>
+            <div class="key white" data-note="D"></div>
+            <div class="key black" data-note="D#"></div>
+            <div class="key white" data-note="E"></div>
+            <div class="key white" data-note="F"></div>
+            <div class="key black" data-note="F#"></div>
+            <div class="key white" data-note="G"></div>
+            <div class="key black" data-note="G#"></div>
+            <div class="key white" data-note="A"></div>
+            <div class="key black" data-note="A#"></div>
+            <div class="key white" data-note="B"></div>
         </div>
-        <div class="key white">
-          <div class="key black">
-          </div>
-        </div>
-        <div class="key white">
-        </div>
-        <div class="key white">
-          <div class="key black">
-          </div>
-        </div>
-        <div class="key white">
-          <div class="key black">
-          </div>
-        </div>
-        <div class="key white">
-          <div class="key black">
-          </div>
-        </div>
-        <div class="key white">
-        </div>
-      </div>
     </div>
-  </div>  
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const synth = new Tone.Synth().toDestination();
+        const sampler = new Tone.Sampler({
+            urls: {
+                "C4": "C4.mp3",
+                "D#4": "Ds4.mp3",
+                "F#4": "Fs4.mp3",
+                "A4": "A4.mp3",
+                "C5": "C5.mp3",
+                "D#5": "Ds5.mp3",
+            },
+            baseUrl: "https://tonejs.github.io/audio/salamander/",
+            onload: () => {
+                console.log('Sampler loaded');
+            }
+        }).toDestination();
+        
+        let currentNote = null;
+
+        document.querySelectorAll('.key').forEach(key => {
+            key.addEventListener('mousedown', () => {
+                currentNote = key.getAttribute('data-note');
+                synth.triggerAttack(currentNote);
+            });
+
+            key.addEventListener('mouseup', () => {
+                if (currentNote === key.getAttribute('data-note')) {
+                    synth.triggerRelease();
+                    currentNote = null;
+                }
+            });
+
+            key.addEventListener('mouseleave', () => {
+                if (currentNote === key.getAttribute('data-note')) {
+                    synth.triggerRelease();
+                    currentNote = null;
+                }
+            });
+
+            key.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                currentNote = key.getAttribute('data-note');
+                synth.triggerAttack(currentNote);
+            });
+
+            key.addEventListener('touchend', () => {
+                if (currentNote === key.getAttribute('data-note')) {
+                    synth.triggerRelease();
+                    currentNote = null;
+                }
+            });
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (currentNote) {
+                synth.triggerRelease();
+                currentNote = null;
+            }
+        });
+
+        document.addEventListener('touchend', () => {
+            if (currentNote) {
+                synth.triggerRelease();
+                currentNote = null;
+            }
+        });
+    });
+</script>
 {% endblock %}
