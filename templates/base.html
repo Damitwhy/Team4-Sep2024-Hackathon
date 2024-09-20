@@ -45,7 +45,11 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                                href="#">Home</a>
+                                href="/">Home</a>
+                        </li>
+                        <li class="nav-item"></li>
+                            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                                href="piano/">Piano</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -78,6 +82,7 @@
     </span>
     <main>
         {% block content %}
+
         {% endblock %}
     </main>
     <footer class="navbar fixed-bottom">
