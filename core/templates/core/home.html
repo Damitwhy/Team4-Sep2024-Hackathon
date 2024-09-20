@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container d-flex justify-content-center align-items-center" style="height: 80vh; padding: 0;">
     <div class="row w-100">
-        <!-- Left Container -->
+        <!-- Left Container (equal width) -->
         <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
             <div class="card play-card w-100 text-center p-4" style="height: 300px;">
                 <p class="main-text">A fun way to experience music.</p>
@@ -11,10 +11,10 @@
             </div>
         </div>
 
-        <!-- Right Container -->
+        <!-- Right Container (equal width) -->
         <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center">
-            <div class="card play-card w-100 text-center p-4" style="height: 300px;">
-                <img src="path_to_guitar_image.jpg" alt="Guitar Man" class="guitar-image" style="max-width: 100%; height: auto;">
+            <div class="card play-card w-100 text-center p-0" style="height: 300px;">
+                <img src="{% static 'images/hero.jpeg' %}" alt="Guitar Man" class="guitar-image">
             </div>
         </div>
     </div>
