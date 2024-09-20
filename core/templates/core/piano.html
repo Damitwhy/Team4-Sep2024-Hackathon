@@ -3,9 +3,7 @@
 
 {% block content %}
 
-  /* Piano example */
-
-  <div class="container">
+   <div class="container">
     <div id="piano">
       <div class="keys">
         <div class="key white">
@@ -34,65 +32,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  /* Move to static/css folder */
-
-  <style>
-      .container {
-          text-align: center;
-          padding: 20px;
-          background-color: #BCB8B1;
-      }
-
-      #piano {
-          display: inline-block;
-          border-radius: 10px;
-          box-shadow: #f0f0f0;
-      }
-
-      .keys {
-          display: flex;
-          z-index: 1;
-      }
-
-      .key {
-          height: 240px;
-          width: 60px;
-          margin: 0 2px;
-          cursor: pointer;
-          transition: all 0.1s ease;
-      }
-
-      .white {
-          background-color: #F4F3EE;
-          border: 1px solid #BCB8B1;
-          width: 70px;
-          position: relative;
-          border-radius: 2px;
-      }
-
-      .black {
-          position: absolute;
-          right: 54%;
-          background-color: #463F3A;
-          height: 50px;
-          width: 30px;
-          z-index: 1;
-          border: none;
-          border-radius: 2px;
-      }
-
-      .key:active,
-      .key.active {
-          background-color: #d9d4cb;
-          transform: scale(0.98);
-      }
-
-      .black:active,
-      .black.active {
-          background-color: #3a3630;
-      }
-  </style>
-
+  </div>  
 {% endblock %}
