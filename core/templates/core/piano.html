@@ -29,8 +29,34 @@
         document.querySelectorAll('.key').forEach(key => {
             key.addEventListener('mousedown', () => {
                 const note = key.getAttribute('data-note');
-                synth.triggerAttackRelease(note, '8n');
+                synth.triggerAttack(note);
             });
+
+            key.addEventListener('mouseup', () => {
+                synth.triggerRelease();
+            });
+
+            key.addEventListener('mouseleave', () => {
+                synth.triggerRelease();
+            });
+
+            key.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                const note = key.getAttribute('data-note');
+                synth.triggerAttack(note);
+            });
+
+            key.addEventListener('touchend', () => {
+                synth.triggerRelease();
+            });
+        });
+
+        document.addEventListener('mouseup', () => {
+            synth.triggerRelease();
+        });
+
+        document.addEventListener('touchend', () => {
+            synth.triggerRelease();
         });
     });
 </script>
