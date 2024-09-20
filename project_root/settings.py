@@ -14,7 +14,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Other settings...
-DEBUG = if os.getenv('DEBUG') == 'True' else False
+DEBUG = True if os.getenv('DEBUG') == 'True' else False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
