@@ -25,38 +25,67 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const synth = new Tone.Synth().toDestination();
+        const sampler = new Tone.Sampler({
+            urls: {
+                "C4": "C4.mp3",
+                "D#4": "Ds4.mp3",
+                "F#4": "Fs4.mp3",
+                "A4": "A4.mp3",
+            },
+            baseUrl: "https://tonejs.github.io/audio/salamander/",
+            onload: () => {
+                console.log('Sampler loaded');
+            }
+        }).toDestination();
+        
+        let currentNote = null;
 
         document.querySelectorAll('.key').forEach(key => {
             key.addEventListener('mousedown', () => {
-                const note = key.getAttribute('data-note');
-                synth.triggerAttack(note);
+                currentNote = key.getAttribute('data-note');
+                synth.triggerAttack(currentNote);
             });
 
             key.addEventListener('mouseup', () => {
-                synth.triggerRelease();
+                if (currentNote === key.getAttribute('data-note')) {
+                    synth.triggerRelease();
+                    currentNote = null;
+                }
             });
 
             key.addEventListener('mouseleave', () => {
-                synth.triggerRelease();
+                if (currentNote === key.getAttribute('data-note')) {
+                    synth.triggerRelease();
+                    currentNote = null;
+                }
             });
 
             key.addEventListener('touchstart', (e) => {
                 e.preventDefault();
-                const note = key.getAttribute('data-note');
-                synth.triggerAttack(note);
+                currentNote = key.getAttribute('data-note');
+                synth.triggerAttack(currentNote);
             });
 
             key.addEventListener('touchend', () => {
-                synth.triggerRelease();
+                if (currentNote === key.getAttribute('data-note')) {
+                    synth.triggerRelease();
+                    currentNote = null;
+                }
             });
         });
 
         document.addEventListener('mouseup', () => {
-            synth.triggerRelease();
+            if (currentNote) {
+                synth.triggerRelease();
+                currentNote = null;
+            }
         });
 
         document.addEventListener('touchend', () => {
-            synth.triggerRelease();
+            if (currentNote) {
+                synth.triggerRelease();
+                currentNote = null;
+            }
         });
     });
 </script>
