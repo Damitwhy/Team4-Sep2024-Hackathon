@@ -22,6 +22,12 @@ body {
   padding: 0;
 }
 
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #BCB8B1;
+}
+
 header {
   background-color: var(--header-color);
   padding: 2rem;
