@@ -37,3 +37,5 @@ Team members:
 ## Agile Development Process
 
 ## Credits
+* [Bing image creator](https://www.bing.com/images/create?FORM=GDPGLP)
+* [Tiny png image compressor](https://tinypng.com/)
