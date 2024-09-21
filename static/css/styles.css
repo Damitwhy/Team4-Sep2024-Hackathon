@@ -24,6 +24,11 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'Nunito Sans', sans-serif;
+
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+
 }
 
 .nav-link {
@@ -102,9 +107,12 @@ main {
   color: white;
 }
 .guitar-image {
-  max-width: 100%;
-  height: auto;
+  width: auto; /* Let width adjust based on height */
+  max-width: 100%; /* Ensures the image doesn't exceed container width */
+  height: 100%; /* Set the image's height to fill the container */
+  max-height: 100%; /* Prevents the image from overflowing vertically */
   border-radius: 10px;
+  object-fit: contain; /* Ensures the image scales down without being distorted */
 }
 
 footer {
