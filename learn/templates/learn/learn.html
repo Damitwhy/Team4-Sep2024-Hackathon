@@ -1,5 +1,26 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block extra_js %}
+	<script src="{% static 'js/piano.js' %}" type="text/javascript"></script>
+{% endblock extra_js %}
+
 {% block content %}
-This is the page for the keyboard
+	<div class="container">
+		<div id="piano">
+			<div id="keyboard" class="keys">
+				{% for key, code in keys.items %}
+					{% if "#" in key %}
+						<div class="key white" id="{{ key }}" data-note="{{ key }}" data-keyCode="{{ code }}">
+							<div class="key black">
+							</div>
+						</div>
+					{% else %}
+						<div class="key white" id="{{ key }}" data-note="{{ key }}" data-keyCode="{{ code }}">
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
 {% endblock %}
