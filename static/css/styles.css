@@ -64,7 +64,7 @@ body {
 .container {
   text-align: center;
   padding: 20px;
-  background-color: #bcb8b1;
+  /* background-color: #bcb8b1; */
 }
 
 header {
@@ -109,13 +109,48 @@ main {
   background-color: var(--secondary-color);
   color: white;
 }
-.guitar-image {
-  width: auto; /* Let width adjust based on height */
-  max-width: 100%; /* Ensures the image doesn't exceed container width */
-  height: 100%; /* Set the image's height to fill the container */
-  max-height: 100%; /* Prevents the image from overflowing vertically */
-  border-radius: 10px;
-  object-fit: contain; /* Ensures the image scales down without being distorted */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust the height as needed for your hero section */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container, maintaining aspect ratio */
+  border-radius: 10px; /* Optional: Adds rounding to the image edges */
+}
+
+.hero-text {
+  position: absolute;
+  text-align: center;
+  color: white; /* Text color to contrast with the image */
+  font-family: 'Nunito Sans', sans-serif;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
+  border-radius: 10px; /* Match border radius with the image */
+}
+
+.main-text {
+  font-size: 1.5rem; /* Adjust the size as needed */
+  margin-bottom: 1rem;
+}
+
+.action-button {
+  background-color: var(--button-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: darkorange; /* Add hover effect */
 }
 
 footer {
