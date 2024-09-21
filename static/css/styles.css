@@ -27,8 +27,11 @@ body {
 
   margin: 0;
   padding: 0;
-  padding-bottom: 50px;
-
+  
+}
+.action-button {
+  background-color: var(--background-color);
+  color: #f0f0f0;
 }
 
 .nav-link {
