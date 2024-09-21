@@ -6,3 +6,6 @@ def home(request):
 
 def piano(request):
     return render(request, 'core/piano.html')
+
+def about(request):
+    return render(request, 'core/about.html')    
