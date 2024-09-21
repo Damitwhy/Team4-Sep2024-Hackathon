@@ -4,9 +4,9 @@ from django.shortcuts import render
 def learn(request):
      # Define the keyboard keys for one octave
     keyboard_keys = {
-        'C': 65, 'C#': 87, 'D': 83, 'D#': 69,
-        'E': 68, 'F': 70, 'F#': 84, 'G': 71,
-        'G#': 89, 'A': 72, 'A#': 85, 'B': 74 
+        'C': 'a', 'C#': 'w', 'D': 's', 'D#': 'e',
+        'E': 'd', 'F': 'f', 'F#': 't', 'G': 'g',
+        'G#': 'y', 'A': 'h', 'A#': 'u', 'B': 'j',
     }
 
     # Create context dictionary with keys as values
