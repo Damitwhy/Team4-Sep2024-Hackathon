@@ -4,7 +4,7 @@
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
   --background-color: #221601;
-  --text-color: #463f3a;
+  --text-color: #fffffff5;
   --border-color: #bdc3c7;
   --accent-1: #f4f3ee;
   --background-dark: #221601;
@@ -35,7 +35,7 @@ body {
 }
 
 .nav-link {
-  color: var(--text-color);
+  color: var(--background-color);
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -46,19 +46,19 @@ body {
 
 .nav-link:hover {
   opacity: 0.8;
-  color: var(--text-color);
+  color: var(--background-color);
   transform: scale(1.01);
 }
 
 .navbar-brand {
-  color: var(--text-color);
+  color: var(--background-color);
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand:hover {
   opacity: 0.8;
-  color: var(--text-color);
+  color: var(--background-color);
 }
 
 .container {
@@ -102,12 +102,13 @@ main {
   border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
+  color: var(--background-color);
 }
 
 .card:hover {
   transform: scale(1.05);
   background-color: var(--secondary-color);
-  color: white;
+  color: var(--background-color);
 }
 .hero-container {
   position: relative;
@@ -141,7 +142,7 @@ main {
 }
 
 .action-button {
-  background-color: var(--button-color);
+  background-color: var(--background-color);
   color: white;
   padding: 10px 20px;
   border: none;
