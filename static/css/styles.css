@@ -24,11 +24,10 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   font-family: 'Nunito Sans', sans-serif;
-
   margin: 0;
   padding: 0;
-  
 }
+
 .action-button {
   background-color: var(--background-color);
   color: #f0f0f0;
@@ -109,6 +108,7 @@ main {
   background-color: var(--secondary-color);
   color: white;
 }
+
 .guitar-image {
   width: auto; /* Let width adjust based on height */
   max-width: 100%; /* Ensures the image doesn't exceed container width */
@@ -132,131 +132,6 @@ footer {
   display: inline-block;
   border-radius: 10px;
   box-shadow: #f0f0f0;
-}
-
-.keys {
-  display: flex;
-  z-index: 1;
-}
-
-.key {
-  height: 240px;
-  width: 60px;
-  margin: 0 2px;
-  cursor: pointer;
-  transition: all 0.1s ease;
-}
-
-.white {
-  background-color: #f4f3ee;
-  border: 1px solid #bcb8b1;
-  width: 70px;
-  position: relative;
-  border-radius: 2px;
-}
-
-.black {
-  position: absolute;
-  right: 54%;
-  background-color: #463f3a;
-  height: 50px;
-  width: 30px;
-  z-index: 1;
-  border: none;
-  border-radius: 2px;
-}
-
-.key:active,
-.key.active {
-  background-color: #d9d4cb;
-  transform: scale(0.98);
-}
-
-.black:active,
-.black.active {
-  background-color: #3a3630;
-}
-
-/* Font styles */
-
-/* PT Serif: CSS classes */
-.pt-serif-regular {
-  font-family: 'PT Serif', serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.pt-serif-bold {
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.pt-serif-regular-italic {
-  font-family: 'PT Serif', serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.pt-serif-bold-italic {
-  font-family: 'PT Serif', serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* PT Sans: CSS classes */
-
-.pt-sans-regular {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.pt-sans-bold {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.pt-sans-regular-italic {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.pt-sans-bold-italic {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* Nunito Sans: CSS class for a variable style */
-
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 1000 */
-
-.nunito-sans-heading {
-  font-family: 'Nunito Sans', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700; /* Example weight */
-  font-style: normal;
-  font-variation-settings: 'wdth' 100, 'YTLC' 500;
-}
-
-/* Nunito: CSS class for a variable style */
-
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 200 to 1000 */
-
-.nunito-heading {
-  font-family: 'Nunito', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700; /* Example weight */
-  font-style: normal;
-}
-
-/* Piano Style */
-#piano {
   position: relative;
   width: 700px;
   height: 200px;
@@ -290,24 +165,32 @@ footer {
   margin-left: -20px;
 }
 
-.key.black[data-note='C#'] {
+.key.black[data-note='C#4'] {
   left: 40px;
 }
 
-.key.black[data-note='D#'] {
+.key.black[data-note='D#4'] {
   left: 100px;
 }
 
-.key.black[data-note='F#'] {
+.key.black[data-note='F#4'] {
   left: 220px;
 }
 
-.key.black[data-note='G#'] {
+.key.black[data-note='G#4'] {
   left: 280px;
 }
 
-.key.black[data-note='A#'] {
+.key.black[data-note='A#4'] {
   left: 340px;
+}
+
+.key.black[data-note='C#5'] {
+  left: 400px;
+}
+
+.key.black[data-note='D#5'] {
+  left: 460px;
 }
 
 /* Media Queries */

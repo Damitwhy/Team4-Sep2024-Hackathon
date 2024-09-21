@@ -4,25 +4,34 @@
 {% block content %}
 
    <div class="container">
+    <div id="staff" style="border: 1px solid black; height: 150px; margin-bottom: 20px;">
+        <!-- Staff content will be populated here -->
+    </div>
     <div id="piano">
         <div class="keys">
-            <div class="key white" data-note="C"></div>
-            <div class="key black" data-note="C#"></div>
-            <div class="key white" data-note="D"></div>
-            <div class="key black" data-note="D#"></div>
-            <div class="key white" data-note="E"></div>
-            <div class="key white" data-note="F"></div>
-            <div class="key black" data-note="F#"></div>
-            <div class="key white" data-note="G"></div>
-            <div class="key black" data-note="G#"></div>
-            <div class="key white" data-note="A"></div>
-            <div class="key black" data-note="A#"></div>
-            <div class="key white" data-note="B"></div>
+            <div class="key white" data-note="C4"></div>
+            <div class="key black" data-note="C#4"></div>
+            <div class="key white" data-note="D4"></div>
+            <div class="key black" data-note="D#4"></div>
+            <div class="key white" data-note="E4"></div>
+            <div class="key white" data-note="F4"></div>
+            <div class="key black" data-note="F#4"></div>
+            <div class="key white" data-note="G4"></div>
+            <div class="key black" data-note="G#4"></div>
+            <div class="key white" data-note="A4"></div>
+            <div class="key black" data-note="A#4"></div>
+            <div class="key white" data-note="B4"></div>
+            <div class="key white" data-note="C5"></div>
+            <div class="key black" data-note="C#5"></div>
+            <div class="key white" data-note="D5"></div>
+            <div class="key black" data-note="D#5"></div>
+            <div class="key white" data-note="E5"></div>
         </div>
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/15.0.4/Tone.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vexflow/3.0.9/vexflow-min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const synth = new Tone.Synth().toDestination();
@@ -42,36 +51,66 @@
         }).toDestination();
         
         let currentNote = null;
+        let notes = [];
+
+        // Initialize VexFlow
+        const VF = Vex.Flow;
+        const div = document.getElementById("staff");
+        const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+        renderer.resize(500, 150);
+        const context = renderer.getContext();
+        const stave = new VF.Stave(10, 40, 480);
+        stave.addClef("treble").setContext(context).draw();
+
+        function updateStaff(note) {
+            notes.push(new VF.StaveNote({
+                clef: "treble",
+                keys: [note.toLowerCase()],
+                duration: "q"
+            }));
+
+            const voice = new VF.Voice({num_beats: 4,  beat_value: 4});
+            voice.addTickables(notes);
+
+            const formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+            context.clear();
+            stave.setContext(context).draw();
+            voice.draw(context, stave);
+        }
 
         document.querySelectorAll('.key').forEach(key => {
-            key.addEventListener('mousedown', () => {
+            key.addEventListener('mousedown', async () => {
+                await Tone.start(); // Ensure AudioContext is started
                 currentNote = key.getAttribute('data-note');
-                synth.triggerAttack(currentNote);
+                sampler.triggerAttack(currentNote);
+                updateStaff(currentNote);
             });
 
             key.addEventListener('mouseup', () => {
                 if (currentNote === key.getAttribute('data-note')) {
-                    synth.triggerRelease();
+                    sampler.triggerRelease();
                     currentNote = null;
                 }
             });
 
             key.addEventListener('mouseleave', () => {
                 if (currentNote === key.getAttribute('data-note')) {
-                    synth.triggerRelease();
+                    sampler.triggerRelease();
                     currentNote = null;
                 }
             });
 
-            key.addEventListener('touchstart', (e) => {
+            key.addEventListener('touchstart', async (e) => {
                 e.preventDefault();
+                await Tone.start(); // Ensure AudioContext is started
                 currentNote = key.getAttribute('data-note');
-                synth.triggerAttack(currentNote);
+                sampler.triggerAttack(currentNote);
+                updateStaff(currentNote);
             });
 
             key.addEventListener('touchend', () => {
                 if (currentNote === key.getAttribute('data-note')) {
-                    synth.triggerRelease();
+                    sampler.triggerRelease();
                     currentNote = null;
                 }
             });
@@ -79,14 +118,14 @@
 
         document.addEventListener('mouseup', () => {
             if (currentNote) {
-                synth.triggerRelease();
+                sampler.triggerRelease();
                 currentNote = null;
             }
         });
 
         document.addEventListener('touchend', () => {
             if (currentNote) {
-                synth.triggerRelease();
+                sampler.triggerRelease();
                 currentNote = null;
             }
         });
