@@ -9,3 +9,6 @@ def piano(request):
 
 def about(request):
     return render(request, 'core/about.html')    
+
+def learn(request):
+    return render(request, 'core/learn.html')      
