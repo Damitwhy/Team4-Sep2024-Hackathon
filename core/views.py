@@ -5,14 +5,14 @@ from .models import Contributor
 def home(request):
     return render(request, 'core/home.html')
 
-def piano(request):
-    return render(request, 'core/piano.html')
+def learn(request):
+    return render(request, 'core/learn.html')
 
 def about(request):
-
     contributors = Contributor.objects.all()
     return render(request, 'core/about.html', {'contributors': contributors})
 
 def learn_view(request):
     return render(request, 'core/learn.html')
+
 
