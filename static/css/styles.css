@@ -364,6 +364,12 @@ footer {
   left: 340px;
 }
 
+/* About us styles */
+.profile-img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
 /* Media Queries */
 
 /* For mobile devices (up to 576px) */
