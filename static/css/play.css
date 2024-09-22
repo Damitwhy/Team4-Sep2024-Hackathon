@@ -1,14 +1,18 @@
-.learn--note-info {
+.learn-container {
 	display: flex;
 	flex-direction: row;
 }
 
-.learn--staff {
-	background-color: white;
+.learn-container--info {
+	display: flex;
+	flex-direction: column;
+	background: var(--background-color);
 }
 
-.learn--chords {
-	background: white;
-	min-height: 5rem;
-	width: 100%;
+.info--staff {
+	background-color: #BCB8B1;
+}
+
+.info--text {
+	color: #463F3A !important;
 }

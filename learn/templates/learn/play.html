@@ -6,7 +6,8 @@
 	<script src="{% static 'js/piano.js' %}" type="text/javascript" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
 	<script src="{% static 'js/staff.js' %}" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
+	<script src="https://unpkg.com/tonal@latest"></script>
+
 {% endblock extra_js %}
 
 {% block extra_css %}
@@ -14,13 +15,9 @@
 {% endblock extra_css %}
 
 {% block content %}
-	<div class="learn--flex-container">
-			<div class="learn--note-info">
-				<div id="output" class="learn--staff"></div>
-				<div id="chordFinder" class="learn--chords"></div>
-			</div>
+	<div class="learn-container">
 	
-			<div class="container">
+			<div class="learn-container--keyboard">
 				<div id="piano">
 					<div id="keyboard" class="keys">
 						{% for note, key in keys.items %}
@@ -35,7 +32,11 @@
 					</div>
 				</div>
 			</div>
-		
-	</div>
+			
+			<div class="learn-container--info">
+				<div id="output" class="info--staff"></div>
+				<div id="chordDisplay" class="info--text"></div>
+			</div>
 
+	</div>
 {% endblock %}
