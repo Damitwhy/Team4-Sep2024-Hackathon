@@ -106,6 +106,9 @@ else:
         'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
     print('Production database')
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
