@@ -93,7 +93,7 @@ main {
   flex-wrap: wrap;
 }
 
-.card {
+.path-button {
   background-color: var(--accent-1);
   padding: 1.5rem;
   width: 200px;
@@ -105,7 +105,7 @@ main {
   color: var(--background-color);
 }
 
-.card:hover {
+.path-button:hover {
   transform: scale(1.05);
   background-color: var(--secondary-color);
   color: var(--background-color);
@@ -429,6 +429,12 @@ p {
 
 .key.black[data-note='A#'] {
   left: 340px;
+}
+
+/* About us styles */
+.profile-img {
+  max-width: 150px;
+  max-height: 150px;
 }
 
 /* Media Queries */
