@@ -31,44 +31,6 @@
 		notesArr.push(voice);
 	}
 
-
-	// document.addEventListener('keydown', (event) => {
-
-	// 	// Define the easyscore and vexflow systems
-	// 	vf = new Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
-	// 	score = vf.EasyScore();
-	// 	system = vf.System();
-
-	// 	// get the key that is being pressed and the note that corresponds to it
-	// 	const keyPressed = document.querySelector("[data-key='" + event.key + "']");
-	// 	const note = keyPressed.dataset.note;
-
-	// 	// Constructs the note to be added to the staff
-	// 	const voice = `${note}4/w`;
-
-	// 	// Add the note to the notes array
-	// 	notesArr.push(voice);
-	// 	const voices = notesArr.map((note) => score.voice(score.notes(note)));
-
-	// 	console.log(voices);
-
-	// // 	for (let note of notesArr) {
-	// // 		notesArr.push(score.voice(score.notes(voice + "/w")));  // Add each note wrapped in a voice
-	// // 	}
-		
-	// 	// Remove the previous SVG element
-	// 	// removePreviousStaff();
-
-	// 	// Gets the key target
-	// 	system
-	// 	  .addStave({
-	// 		voices: voices,
-	// 	  })
-	// 	  .addClef('treble');
-
-	// 	vf.draw();
-	// });
-
 	document.addEventListener('keydown', (event) => {
 		// Remove the previous staff by clearing the 'output' div
 		const output = document.getElementById('output');
@@ -106,6 +68,8 @@
 		// Draw the new staff
 		vf.draw();
 	});
+
+
 	
 
 })();
