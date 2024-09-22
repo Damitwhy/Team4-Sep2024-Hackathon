@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def learn(request):
+def play(request):
      # Define the keyboard keys for one octave
     keyboard_keys = {
         'C': 'a', 'C#': 'w', 'D': 's', 'D#': 'e',
@@ -12,4 +12,4 @@ def learn(request):
     # Create context dictionary with keys as values
     context = {'keys': keyboard_keys}
 
-    return render(request, 'learn/piano.html', context)
+    return render(request, 'learn/play.html', context)
