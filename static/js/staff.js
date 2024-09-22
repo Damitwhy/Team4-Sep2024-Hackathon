@@ -1,162 +1,98 @@
-// // IIFE to prevent global namespace pollution
-// (function() {
-// 	const { Factory } = Vex.Flow;
-// 	let notesArr = [];
-
-// 	const initStaff = () => {
-// 		const vf = new Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
-// 		const score = vf.EasyScore();
-// 		const system = vf.System();
-
-// 		system
-// 			.addStave({
-// 				voices: [
-// 				],
-// 			})
-// 			.addClef('treble');
-
-// 		vf.draw();
-// 	}
-
-// 	initStaff();
-
-// 	const removePreviousStaff = () => {
-// 		const output = document.getElementById('output');
-// 		output.innerHTML = '';
-// 	}
-
-
-
-// 	const addNotesToArr = (voice) => {
-// 		notesArr.push(voice);
-// 	}
-
-// 	document.addEventListener('keydown', (event) => {
-// 		// Remove the previous staff by clearing the 'output' div
-// 		const output = document.getElementById('output');
-// 		output.innerHTML = '';  // Clear previous SVG elements
-	
-// 		// Define the easyscore and vexflow systems
-// 		vf = new Vex.Flow.Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
-// 		score = vf.EasyScore();
-// 		system = vf.System();
-	
-// 		// Get the key that is being pressed and the note that corresponds to it
-// 		const keyPressed = document.querySelector("[data-key='" + event.key + "']");
-		
-// 		// If keyPressed is null, ignore (e.g., key doesn't correspond to a valid note)
-// 		if (!keyPressed) return;
-		
-// 		const note = keyPressed.dataset.note;
-	
-// 		// Construct the note to be added to the staff
-// 		const voice = `${note}4/w`;
-	
-// 		// Add the note to the notes array
-// 		notesArr.push(voice);
-	
-// 		// Map the notes array to voices
-// 		const voices = notesArr.map((note) => score.voice(score.notes(note)));
-	
-// 		// Add the stave with all the voices
-// 		system
-// 		  .addStave({
-// 			voices: voices,
-// 		  })
-// 		  .addClef('treble');
-	
-// 		// Draw the new staff
-// 		vf.draw();
-// 	});
-
-
-	
-
-// })();
-
 // IIFE to prevent global namespace pollution
 (function() {
 	const { Factory } = Vex.Flow;
+	const { Chord } = Tonal;
 	let notesArr = [];
 
+	// Create a VexFlow factory
+	const createVexFlowFactory = () => {
+		return new Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
+	};
+
+	// Initialize an empty staff
 	const initStaff = () => {
-		const vf = new Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
+		const vf = createVexFlowFactory();
 		const score = vf.EasyScore();
 		const system = vf.System();
 
-		system
-			.addStave({
-				voices: [],
-			})
-			.addClef('treble');
-
+		system.addStave({ voices: [] }).addClef('treble');
 		vf.draw();
 	};
 
-	initStaff();
-
+	// Remove the current staff
 	const removePreviousStaff = () => {
 		const output = document.getElementById('output');
 		output.innerHTML = '';  // Clear previous SVG elements
 	};
 
+	// Render the updated staff with notes
 	const renderStaff = () => {
-		// Remove the previous staff by clearing the 'output' div
-		removePreviousStaff();
-	
-		// Define the easyscore and vexflow systems
-		const vf = new Vex.Flow.Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
+		removePreviousStaff(); // Clear existing staff
+
+		const vf = createVexFlowFactory();
 		const score = vf.EasyScore();
 		const system = vf.System();
-	
-		// Map the notes array to voices
+
+		// Map notes to voices for rendering
 		const voices = notesArr.map((note) => score.voice(score.notes(note)));
-	
-		// Add the stave with all the voices
-		system
-			.addStave({
-				voices: voices,
-			})
-			.addClef('treble');
-	
-		// Draw the new staff
+		system.addStave({ voices: voices }).addClef('treble');
+
 		vf.draw();
+		updateChordDisplay();  // Update the chord display when rendering the staff
 	};
 
-	// Handle keydown event to add notes
-	document.addEventListener('keydown', (event) => {
-		const keyPressed = document.querySelector("[data-key='" + event.key + "']");
-		
-		// If keyPressed is null, ignore (e.g., key doesn't correspond to a valid note)
-		if (!keyPressed) return;
-		
-		const note = keyPressed.dataset.note;
+	// Get note from the key that was pressed
+	const getNoteFromKey = (key) => {
+		const keyPressed = document.querySelector(`[data-key='${key}']`);
+		return keyPressed ? keyPressed.dataset.note : null;
+	};
 
-		// Construct the note to be added to the staff
-		const voice = `${note}4/w`;
-	
-		// Add the note to the notes array if it's not already present
+	// Update the chord display based on the current notes array
+	const updateChordDisplay = () => {
+		// Clean the notes by removing /w
+		const cleanedNotes = notesArr.map(note => note.replace(/\/w$/, ''));
+		
+		// Get the chord based on cleaned notes
+		const chord = Chord.detect(cleanedNotes)[0] || "No Chord"; // Using `Chord.detect` to get the chord name
+		const chordDisplay = document.getElementById('chordDisplay');
+		chordDisplay.textContent = chord;
+		chordDisplay.style.fontSize = '2rem';  // Set the display font size to 2rem
+	};
+
+	// Handle key down event - adds the note to the array and re-renders
+	const handleKeyDown = (event) => {
+		const note = getNoteFromKey(event.key);
+		if (!note) return; // Ignore if key is not mapped to a note
+
+		const voice = `${note}4/w`; // Add note in the format C4/w (whole note)
+
+		// Add the note to the array if not already present
 		if (!notesArr.includes(voice)) {
 			notesArr.push(voice);
 			renderStaff();  // Re-render the staff with updated notes
 		}
-	});
+	};
 
-	// Handle keyup event to remove notes
-	document.addEventListener('keyup', (event) => {
-		const keyPressed = document.querySelector("[data-key='" + event.key + "']");
-		
-		// If keyPressed is null, ignore (e.g., key doesn't correspond to a valid note)
-		if (!keyPressed) return;
-		
-		const note = keyPressed.dataset.note;
+	// Handle key up event - removes the note from the array and re-renders
+	const handleKeyUp = (event) => {
+		const note = getNoteFromKey(event.key);
+		if (!note) return; // Ignore if key is not mapped to a note
 
-		// Construct the note to be removed from the staff
 		const voice = `${note}4/w`;
 
-		// Remove the note from the notes array
+		// Remove the note from the array
 		notesArr = notesArr.filter((n) => n !== voice);
 		renderStaff();  // Re-render the staff with updated notes
-	});
+	};
+
+	// Attach event listeners to handle keydown and keyup
+	const attachEventListeners = () => {
+		document.addEventListener('keydown', handleKeyDown);
+		document.addEventListener('keyup', handleKeyUp);
+	};
+
+	// Initialize the staff and event listeners
+	initStaff();
+	attachEventListeners();
 
 })();
