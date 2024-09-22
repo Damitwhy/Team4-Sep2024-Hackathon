@@ -212,6 +212,24 @@ footer {
 .black.active {
   background-color: #3a3630;
 }
+/* About us - Team members */
+.profile-image {
+  width: 100px; /* Set the image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Optional: Makes the images circular */
+  margin-right: 15px; /* Adds space between the image and text */
+}
+
+.team-member {
+  display: flex;
+  align-items: center; /* Vertically centers content */
+  margin-bottom: 20px;
+}
+
+.main-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
 /* Font styles */
 
