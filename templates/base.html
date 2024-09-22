@@ -55,15 +55,7 @@
                   href="#">SonataCraft</a>
                <div class="order-lg-1 d-none d-lg-block">
                   <!-- User authentication status display -->
-                  {% if user.is_authenticated %}
-                     <p class="m-0">
-                        You are logged in as <span>{{ user }}</span>
-                     </p>
-                  {% else %}
-                     <p class="m-0">
-                        You are not logged in
-                     </p>
-                  {% endif %}
+                 
                </div>
                <button class="navbar-toggler"
                        type="button"
@@ -107,35 +99,9 @@
                                      active
                                   {% endif %}"
                            aria-current="page"
-                           href="{% url 'piano' %}">Piano</a>
+                           href="{% url 'play' %}">Piano</a>
                      </li>
-                     {% if user.is_authenticated %}
-                        <li class="nav-item">
-                           <a class="nav-link
-                                     {% if request.path == logout_url %}
-                                        active
-                                     {% endif %}"
-                              aria-current="page"
-                              href="#">Log out</a>
-                        </li>
-                     {% else %}
-                        <li class="nav-item">
-                           <a class="nav-link
-                                     {% if request.path == signup_url %}
-                                        active
-                                     {% endif %}"
-                              aria-current="page"
-                              href="#">Sign up</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link
-                                     {% if request.path == login_url %}
-                                        active
-                                     {% endif %}"
-                              aria-current="page"
-                              href="#">Log in</a>
-                        </li>
-                     {% endif %}
+                     
                   </ul>
                </div>
             </div>
