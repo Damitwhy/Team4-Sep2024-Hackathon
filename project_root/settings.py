@@ -15,7 +15,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Other settings...
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = False #os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -110,7 +110,7 @@ else:
     }
     print('Production database')
 
-CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://*.codeinstitute-ide.net', 'https://*.herokuapp.com']
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
