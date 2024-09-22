@@ -432,9 +432,27 @@ p {
 }
 
 /* About us styles */
+.card {
+  flex-direction: row;
+  background-color: var(--header-color);
+  color: var(--text-color);
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.card-body {
+  text-align: start !important;
+}
+
+.profile-card {
+  max-width: 800px;
+}
+
 .profile-img {
-  max-width: 150px;
-  max-height: 150px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 /* Media Queries */
