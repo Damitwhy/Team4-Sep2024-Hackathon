@@ -1,4 +1,3 @@
-from cloudinary.models import CloudinaryField
 from django.contrib import admin
 from django.db import models
 from django.utils.html import format_html
@@ -58,7 +57,9 @@ class Contributor(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    profile_picture = CloudinaryField("Profile Picture", null=True, blank=True)
+    profile_picture = models.ImageField(
+        upload_to='images/', null=True, blank=True
+    )
     link_github = models.URLField(max_length=200, blank=True)
     link_linked_in = models.URLField(max_length=200, blank=True)
 
