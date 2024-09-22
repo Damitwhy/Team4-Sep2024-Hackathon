@@ -1,24 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="hero-container">
-    <img src="{% static 'images/hero.jpeg' %}" alt="Guitar Man" class="hero-image">
-    <div class="hero-text">
-        <p class="main-text">Welcome to our website, where you can play a virtual piano and
-            explore music theory through interactive lessons. Whether you're here to play or learn, we offer a
-            fun and engaging way to dive into the world of classical music.</p>
-        
-    </div>
-</div>
-<div class="container">
-    <h2 class="main-heading">Choose Your Path</h2>
-    <div class="card-container row">
-        <div class="path-button play-card col-sm-12 col-md-6">
-            <p>Play</p>
-        </div>
-        <div class="path-button learn-card col-sm-12 col-md-6">
-            <p>Learn</p>
+    <div class="hero-container">
+        <img src="{% static 'images/hero.jpeg' %}"
+             alt="Guitar Man"
+             class="hero-image">
+        <div class="hero-text">
+            <p class="main-text">
+                Welcome to our website, where you can play a virtual piano and
+                explore music theory through interactive lessons. Whether you're here to play or learn, we offer a
+                fun and engaging way to dive into the world of classical music.
+            </p>
         </div>
     </div>
-</div>
+    <div class="container">
+        <h2 class="main-heading">
+            Choose Your Path
+        </h2>
+        <div class="card-container row">
+            <div class="path-button play-card">
+                <a href="{% url 'play' %}"
+                   class="btn btn-lg btn-block">
+                    <i class="fas fa-play mr-2"></i> Play
+                </a>
+            </div>
+            <div class="path-button play-card">
+                <a href="{% url 'learn' %}"
+                   class="btn btn-lg btn-block">
+                    <i class="fas fa-book mr-2"></i> Learn
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
