@@ -12,4 +12,4 @@ def learn(request):
     # Create context dictionary with keys as values
     context = {'keys': keyboard_keys}
 
-    return render(request, 'learn/learn.html', context)
+    return render(request, 'learn/piano.html', context)
