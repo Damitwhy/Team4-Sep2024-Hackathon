@@ -3,27 +3,51 @@
 
 {% block content %}
 
-   <div class="container">
-    <div id="piano">
-        <div class="keys">
-            <div class="key white" data-note="C"></div>
-            <div class="key black" data-note="C#"></div>
-            <div class="key white" data-note="D"></div>
-            <div class="key black" data-note="D#"></div>
-            <div class="key white" data-note="E"></div>
-            <div class="key white" data-note="F"></div>
-            <div class="key black" data-note="F#"></div>
-            <div class="key white" data-note="G"></div>
-            <div class="key black" data-note="G#"></div>
-            <div class="key white" data-note="A"></div>
-            <div class="key black" data-note="A#"></div>
-            <div class="key white" data-note="B"></div>
+    <div class="container">
+        <div id="piano">
+            <div class="keys">
+                <div class="key white"
+                     data-note="C">
+                </div>
+                <div class="key black"
+                     data-note="C#">
+                </div>
+                <div class="key white"
+                     data-note="D">
+                </div>
+                <div class="key black"
+                     data-note="D#">
+                </div>
+                <div class="key white"
+                     data-note="E">
+                </div>
+                <div class="key white"
+                     data-note="F">
+                </div>
+                <div class="key black"
+                     data-note="F#">
+                </div>
+                <div class="key white"
+                     data-note="G">
+                </div>
+                <div class="key black"
+                     data-note="G#">
+                </div>
+                <div class="key white"
+                     data-note="A">
+                </div>
+                <div class="key black"
+                     data-note="A#">
+                </div>
+                <div class="key white"
+                     data-note="B">
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
-<script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.min.js"></script>
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
         const synth = new Tone.Synth().toDestination();
         const sampler = new Tone.Sampler({
@@ -91,5 +115,5 @@
             }
         });
     });
-</script>
+    </script>
 {% endblock %}
