@@ -2,44 +2,47 @@
 {% load static %}
 
 {% block extra_js %}
-	<script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
-	<script src="{% static 'js/piano.js' %}" type="text/javascript" defer></script>
-	<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
-	<script src="{% static 'js/staff.js' %}" defer></script>
-	<script src="https://unpkg.com/tonal@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+<script src="{% static 'js/piano.js' %}" type="text/javascript" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
+<script src="{% static 'js/staff.js' %}" defer></script>
+<script src="https://unpkg.com/tonal@latest"></script>
 
 {% endblock extra_js %}
 
 {% block extra_css %}
-	<link rel="stylesheet" href="{% static "css/play.css" %}">
+<link rel="stylesheet" href="{% static " css/play.css" %}">
 {% endblock extra_css %}
 
 {% block content %}
 
-	<div class="learn-container">
-
-		<div class="piano-container">
-			<ul id="keyboard" class="piano-keys-list">
-				{% for note, key in keys.items %}
-					{% if "#" in note %}
-						<li class="key piano-keys black-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-							{{ note  }}
-						</li>
-					{% else %}
-						<li class="key piano-keys white-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-							{{ note }}
-						</li>
-					{% endif %}		
-				{% endfor %}
-			</ul>
-		</div>
-
-
-			
-		<div class="learn-container--info">
-			<div id="output" class="info--staff"></div>
-			<div id="chordDisplay" class="info--text"></div>
-		</div>
-
+<div class="learn-container">
+	<div class="piano-container">
+		<ul id="keyboard" class="piano-keys-list">
+			{% for note, key in keys.items %}
+			{% if "#" in note %}
+			<li class="key piano-keys black-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
+				{{ note }}
+			</li>
+			{% else %}
+			<li class="key piano-keys white-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
+				{{ note }}
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
 	</div>
+	<div class="learn-container--info">
+		<div id="output" class="info--staff"></div>
+		<div id="chordDisplay" class="info--text"></div>
+	</div>
+</div>
+<div class="container text-dark">
+	<h1>How to play</h1>
+	<p>The piano can be played using your mouse or keyboard.</p>
+	<p>For the chords/notes to be displayed in text and on the music staff, you have to use your keyboard</p>
+	<p>White keys (starting at C): A, S, D, F, G, H, J</p>
+	<p>Black keys (starting at C#): W, E, T, Y, U</p>
+	<p>Enjoy!</p>
+</div>
 {% endblock %}

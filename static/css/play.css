@@ -8,10 +8,6 @@
 	background: var(--background-color);
 }
 
-.learn-container--info {
-	background: ;
-}
-
 .info--staff {
     margin: 2rem;
     border-radius: 16px;
@@ -44,7 +40,6 @@
 
 .white-key {
 	background-color: #fff;
-	color: 
 }
 
 .black-key {
@@ -114,7 +109,7 @@
 		align-items: center;
 		justify-content: flex-start;
 		overflow: auto;
-		margin: auto;s
+		margin: auto;
 	}
 
 	.piano-keys {
