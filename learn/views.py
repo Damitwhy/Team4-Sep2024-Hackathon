@@ -1,5 +1,6 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def play(request):
      # Define the keyboard keys for one octave

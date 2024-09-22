@@ -1,5 +1,7 @@
 from django.shortcuts import render
+
 from .models import Contributor
+
 
 # Create your views here.
 def home(request):

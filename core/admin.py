@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from .models import AudioSetup, Instrument, Sample, Contributor
+from .models import AudioSetup, Contributor, Instrument, Sample
 
 
 @admin.register(Instrument)
@@ -23,6 +23,7 @@ class AudioSetupAdmin(admin.ModelAdmin):
     list_display = ('name', 'get_instrument_count')
     search_fields = ('name',)
     filter_horizontal = ('instruments',)
+
 
 @admin.register(Contributor)
 class ContributorAdmin(admin.ModelAdmin):
