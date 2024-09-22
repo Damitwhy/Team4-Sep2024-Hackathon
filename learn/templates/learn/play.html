@@ -1,48 +1,74 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-
 {% block extra_js %}
-<script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
-<script src="{% static 'js/piano.js' %}" type="text/javascript" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
-<script src="{% static 'js/staff.js' %}" defer></script>
-<script src="https://unpkg.com/tonal@latest"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+    <script src="{% static 'js/piano.js' %}"
+            type="text/javascript"
+            defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
+    <script src="{% static 'js/staff.js' %}"
+            defer></script>
+    <script src="https://unpkg.com/tonal@latest"></script>
 {% endblock extra_js %}
-
 {% block extra_css %}
-<link rel="stylesheet" href="{% static " css/play.css" %}">
+    <link rel="stylesheet"
+          href="{% static 'css/play.css' %}">
 {% endblock extra_css %}
-
 {% block content %}
-
-<div class="learn-container">
-	<div class="piano-container">
-		<ul id="keyboard" class="piano-keys-list">
-			{% for note, key in keys.items %}
-			{% if "#" in note %}
-			<li class="key piano-keys black-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-				{{ note }}
-			</li>
-			{% else %}
-			<li class="key piano-keys white-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-				{{ note }}
-			</li>
-			{% endif %}
-			{% endfor %}
-		</ul>
-	</div>
-	<div class="learn-container--info">
-		<div id="output" class="info--staff"></div>
-		<div id="chordDisplay" class="info--text"></div>
-	</div>
-</div>
-<div class="container text-dark">
-	<h1>How to play</h1>
-	<p>The piano can be played using your mouse or keyboard.</p>
-	<p>For the chords/notes to be displayed in text and on the music staff, you have to use your keyboard</p>
-	<p>White keys (starting at C): A, S, D, F, G, H, J</p>
-	<p>Black keys (starting at C#): W, E, T, Y, U</p>
-	<p>Enjoy!</p>
-</div>
-{% endblock %}
+    <div class="learn-container">
+        <div class="piano-container">
+            <ul id="keyboard"
+                class="piano-keys-list">
+                {% for note, key in keys.items %}
+                    <li class="key piano-keys
+                               {% if '#' in note %}
+                                   black-key
+                               {% else %}
+                                   white-key
+                               {% endif %}"
+                        id="{{ note }}"
+                        data-note="{{ note }}"
+                        data-key="{{ key }}">
+                        {{ note }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="learn-container--info">
+            <div id="output"
+                 class="info--staff">
+            </div>
+            <div id="chordDisplay"
+                 class="info--text">
+            </div>
+        </div>
+    </div>
+    <div class="container text-white">
+        <h1 class="mb-4">
+            How to play
+        </h1>
+        <h5 class="mb-2">
+            The piano can be played using your mouse or keyboard.
+        </h5>
+        <p class="mb-3">
+            For the chords/notes to be displayed in text and on the music staff, use your keyboard.
+        </p>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-4">
+                White keys (starting at C):
+                <p class="mt-1">
+                    A, S, D, F, G, H, J
+                </p>
+            </div>
+            <div class="col-md-4">
+                Black keys (starting at C#):
+                <p class="mt-1">
+                    W, E, T, Y, U
+                </p>
+            </div>
+        </div>
+        <h2 class="my-3">
+            Enjoy!
+        </h2>
+    </div>
+{% endblock content %}
