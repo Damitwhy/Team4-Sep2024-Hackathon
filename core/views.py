@@ -8,8 +8,9 @@ def home(request):
 def piano(request):
     return render(request, 'core/piano.html')
 
-def about(request):
+def learn(request):
+    return render(request, 'core/learn.html')
 
+def about(request):
     contributors = Contributor.objects.all()
     return render(request, 'core/about.html', {'contributors': contributors})
-
