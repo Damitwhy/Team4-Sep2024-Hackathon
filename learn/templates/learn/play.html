@@ -15,28 +15,31 @@
 {% endblock extra_css %}
 
 {% block content %}
+
 	<div class="learn-container">
-	
-			<div class="learn-container--keyboard">
-				<div id="piano">
-					<div id="keyboard" class="keys">
-						{% for note, key in keys.items %}
-							{% if "#" in note %}
-								<div class="key black" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-								</div>
-							{% else %}
-								<div class="key white" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-								</div>
-							{% endif %}
-						{% endfor %}
-					</div>
-				</div>
-			</div>
+
+		<div class="piano-container">
+			<ul id="keyboard" class="piano-keys-list">
+				{% for note, key in keys.items %}
+					{% if "#" in note %}
+						<li class="key piano-keys black-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
+							{{ note  }}
+						</li>
+					{% else %}
+						<li class="key piano-keys white-key" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
+							{{ note }}
+						</li>
+					{% endif %}		
+				{% endfor %}
+			</ul>
+		</div>
+
+
 			
-			<div class="learn-container--info">
-				<div id="output" class="info--staff"></div>
-				<div id="chordDisplay" class="info--text"></div>
-			</div>
+		<div class="learn-container--info">
+			<div id="output" class="info--staff"></div>
+			<div id="chordDisplay" class="info--text"></div>
+		</div>
 
 	</div>
 {% endblock %}
