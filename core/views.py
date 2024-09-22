@@ -8,11 +8,10 @@ def home(request):
 def learn(request):
     return render(request, 'core/learn.html')
 
+def learn(request):
+    return render(request, 'core/learn.html')
+
 def about(request):
     contributors = Contributor.objects.all()
     return render(request, 'core/about.html', {'contributors': contributors})
-
-def learn_view(request):
-    return render(request, 'core/learn.html')
-
 
