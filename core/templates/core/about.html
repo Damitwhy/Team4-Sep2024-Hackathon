@@ -2,32 +2,45 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid d-flex flex-column align-items-center">
-    <h1 class="main-heading">Contributors</h1>
-    {% for contributor in contributors %}
-    <div class="contributor">
-        <div class="card profile-card bg-transparent mb-2 border-0">
-            <div class="row g-0">
-                <div class="col-md-3 d-flex justify-content-center align-items-center">
-                    <img src="{{ contributor.profile_picture.url }}" class="profile-img img-fluid rounded-circle text-decoration-underline"
-                        alt="{{ contributor.name }}">
-                </div>
-                <div class="col-md-8 d-flex flex-column">
-                    <div class="card-body text-end">
-                        <h2 class="card-title large">{{ contributor.name }}</h2>
-                        <h3 class="text-white-50">{{ contributor.title }}</h3>
-                        <p class="card-text">{{ contributor.description }}</p>
-                    </div>
-                    <div class="card profile-card d-flex bg-transparent border-0 justify-content-end">
-                        <div class="col-md-6 small">
-                            <a href="{{ contributor.link_github }}" class="text-body-secondary btn btn-outline-light" target="_blank">Github</a>
-                            <a href="{{ contributor.link_linked_in }}" class="text-body-secondary btn btn-outline-light" target="_blank">LinkedIn</a>
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <h1 class="main-heading">
+            Contributors
+        </h1>
+        {% for contributor in contributors %}
+            <div class="contributor">
+                <div class="card profile-card bg-transparent mb-2 border-0">
+                    <div class="row g-0">
+                        <div class="col-md-3 d-flex justify-content-center align-items-center">
+                            <img src="{{ contributor.profile_picture.url }}"
+                                 class="profile-img img-fluid rounded-circle text-decoration-underline"
+                                 alt="{{ contributor.name }}">
+                        </div>
+                        <div class="col-md-8 d-flex flex-column">
+                            <div class="card-body text-end">
+                                <h2 class="card-title large">
+                                    {{ contributor.name }}
+                                </h2>
+                                <h3 class="text-white-50">
+                                    {{ contributor.title }}
+                                </h3>
+                                <p class="card-text">
+                                    {{ contributor.description }}
+                                </p>
+                            </div>
+                            <div class="card profile-card d-flex bg-transparent border-0 justify-content-end">
+                                <div class="col-md-6 small">
+                                    <a href="{{ contributor.link_github }}"
+                                       class="text-body-secondary btn btn-outline-light"
+                                       target="_blank">Github</a>
+                                    <a href="{{ contributor.link_linked_in }}"
+                                       class="text-body-secondary btn btn-outline-light"
+                                       target="_blank">LinkedIn</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 {% endblock %}
