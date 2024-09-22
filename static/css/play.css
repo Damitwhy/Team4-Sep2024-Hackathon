@@ -1,18 +1,139 @@
 .learn-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column-reverse;
+	margin: auto;
 }
 
 .learn-container--info {
-	display: flex;
-	flex-direction: column;
 	background: var(--background-color);
 }
 
+.learn-container--info {
+	background: ;
+}
+
 .info--staff {
-	background-color: #BCB8B1;
+    margin: 2rem;
+    border-radius: 16px;
 }
 
 .info--text {
 	color: #463F3A !important;
+}
+
+.piano-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.piano-keys-list {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+}
+
+.piano-keys {
+	width: 5rem;
+	cursor: pointer;
+	position: relative;
+	height: 20rem;
+	border-radius: 10px;
+	border: 1px solid #000;
+}
+
+.white-key {
+	background-color: #fff;
+	color: 
+}
+
+.black-key {
+	width: 2rem;
+	height: 13rem;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	background-color: #000;
+	z-index: 2;
+	margin: 0 -20px 0 -20px;
+}
+
+@media screen and (min-width: 821px) and (max-width: 1024px) {
+	.info--staff {
+		background-color: #BCB8B1;
+		margin: 2rem;
+		border-radius: 16px;
+	}
+
+	.piano-keys {
+		width: 4rem;
+		cursor: pointer;
+		position: relative;
+		height: 20rem;
+		border-radius: 10px;
+		border: 1px solid #000;
+	}
+
+	.black-key {
+		width: 2rem;
+		height: 13rem;
+		border-radius: 5px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color: #000;
+		z-index: 2;
+		margin: 0 -20px 0 -20px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 820px) {
+	.piano-keys {
+		width: 3.5rem;
+		cursor: pointer;
+		position: relative;
+		height: 16rem;
+		border-radius: 10px;
+		border: 1px solid #000;
+	}
+
+	.black-key {
+		width: 1.8rem;
+		height: 10rem;
+		border-radius: 5px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color: #000;
+		z-index: 2;
+		margin: 0 -20px 0 -20px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	.piano-container {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		overflow: auto;
+		margin: auto;s
+	}
+
+	.piano-keys {
+		width: 3.5rem;
+		cursor: pointer;
+		position: relative;
+		height: 16rem;
+		border-radius: 10px;
+		border: 1px solid #000;
+	}
+
+	.black-key {
+		width: 1.8rem;
+		height: 10rem;
+		border-radius: 5px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		background-color: #000;
+		z-index: 2;
+		margin: 0 -20px 0 -20px;
+	}
 }

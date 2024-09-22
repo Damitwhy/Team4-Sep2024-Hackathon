@@ -11,6 +11,13 @@
   --header-color: #f5f5dc;
   --footer-color: #da9a11;
   --button-color: #da9a11;
+
+  --bg-light: #F4F3EE;
+  --bg-dark: #463F3A;
+  --accent: #E0AFA0;
+  --accent-action: #f49072;
+
+  --nunito: 'Nunito Sans', sans-serif;
 }
 
 * {
@@ -21,7 +28,7 @@
 
 /* Apply the color variables */
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-light);
   font-family: 'Nunito Sans', sans-serif;
 
   margin: 0;
@@ -29,12 +36,16 @@ body {
   
 }
 .action-button {
-  background-color: var(--background-color);
+  background-color: var(--accent);
   color: #f0f0f0;
+
+  &:hover {
+    background-color: var(--accent-action);
+  }
 }
 
 .nav-link {
-  color: var(--background-color);
+  color: var(--bg-dark);
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -45,19 +56,19 @@ body {
 
 .nav-link:hover {
   opacity: 0.8;
-  color: var(--background-color);
+  color: var(--bg-dark);
   transform: scale(1.01);
 }
 
 .navbar-brand {
-  color: var(--background-color);
+  color: var(--bg-dark);
   font-weight: 600;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand:hover {
   opacity: 0.8;
-  color: var(--background-color);
+  color: var(--accent);
 }
 
 .container {
@@ -76,7 +87,6 @@ header {
 
 main {
   text-align: center;
-  padding: 3rem 0;
   flex-grow: 1;
 }
 
@@ -121,15 +131,13 @@ main {
 .hero-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Cover the container, maintaining aspect ratio */
   border-radius: 10px; /* Optional: Adds rounding to the image edges */
 }
 
 .hero-text {
-  position: absolute;
   text-align: center;
   color: white; /* Text color to contrast with the image */
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: var(--nunito); 
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent background */
   border-radius: 10px; /* Match border radius with the image */
@@ -141,17 +149,18 @@ main {
 }
 
 .action-button {
-  background-color: var(--background-color);
+  background-color: var(--accent);
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+  transition: ease-in 0.3s;
 
-.action-button:hover {
-  background-color: darkorange; /* Add hover effect */
-}
+    &:hover {
+      background-color: var(--accent-action);
+    }
+  }
 
 footer {
   background-color: var(--footer-color);
@@ -375,61 +384,6 @@ p {
   font-style: normal;
 }
 
-/* Piano Style */
-#piano {
-  position: relative;
-  width: 700px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.keys {
-  display: flex;
-  position: relative;
-}
-
-.key {
-  border: 1px solid #000;
-  box-sizing: border-box;
-}
-
-.key.white {
-  width: 60px;
-  height: 200px;
-  background: #fff;
-  position: relative;
-  z-index: 1;
-}
-
-.key.black {
-  width: 40px;
-  height: 120px;
-  background: #000;
-  position: absolute;
-  z-index: 2;
-  margin-left: -20px;
-}
-
-.key.black[data-note='C#'] {
-  left: 40px;
-}
-
-.key.black[data-note='D#'] {
-  left: 100px;
-}
-
-.key.black[data-note='F#'] {
-  left: 220px;
-}
-
-.key.black[data-note='G#'] {
-  left: 280px;
-}
-
-.key.black[data-note='A#'] {
-  left: 340px;
-}
-
 /* About us styles */
 .card {
   flex-direction: row;
@@ -467,10 +421,6 @@ p {
 
   .card {
     font-size: 1.2rem;
-  }
-
-  main {
-    padding: 2rem 0;
   }
 
   footer {

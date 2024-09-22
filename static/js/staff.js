@@ -6,7 +6,7 @@
 
 	// Create a VexFlow factory
 	const createVexFlowFactory = () => {
-		return new Factory({ renderer: { elementId: 'output', width: 500, height: 200 } });
+		return new Factory({ renderer: { elementId: 'output', width: window.innerWidth - 150, height: 150 } });
 	};
 
 	// Initialize an empty staff
