@@ -1,6 +1,8 @@
-from django.db import models
+from cloudinary.models import CloudinaryField
 from django.contrib import admin
+from django.db import models
 from django.utils.html import format_html
+
 
 # ----- Sound models -----
 class Instrument(models.Model):
@@ -48,6 +50,7 @@ class AudioSetup(models.Model):
     def get_instrument_count(self):
         return self.instruments.count()
 
+
 # ----- Contributors -----
 class Contributor(models.Model):
     """Represents a contributor to the project with a profile picture, name, title, description and links"""
@@ -55,13 +58,17 @@ class Contributor(models.Model):
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    profile_picture = models.ImageField(upload_to='media/', blank=True)
+    profile_picture = CloudinaryField("Profile Picture", null=True, blank=True)
     link_github = models.URLField(max_length=200, blank=True)
     link_linked_in = models.URLField(max_length=200, blank=True)
 
     @admin.display(description='External Link')
     def link_to_external_site(self):
-        return format_html('<a href="{}" target="_blank">{}</a>', self.links_footer, 'Visit site')
+        return format_html(
+            '<a href="{}" target="_blank">{}</a>',
+            self.link_github or self.link_linked_in,
+            'Visit site',
+        )
 
     def __str__(self):
         return self.name
