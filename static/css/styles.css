@@ -35,6 +35,8 @@ body {
   padding: 0;
   
 }
+
+
 .action-button {
   background-color: var(--accent);
   color: #f0f0f0;
@@ -42,6 +44,10 @@ body {
   &:hover {
     background-color: var(--accent-action);
   }
+}
+
+.bg-dark {
+  background-color: var(--bg-dark);
 }
 
 .nav-link {
@@ -394,8 +400,24 @@ p {
   font-size: 1.5rem;
 }
 
+.card-text {
+  text-align: start;
+  
+  color: var(--bg-dark);
+}
+
+.card-title {
+  color: var(--bg-dark);
+  /* font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem; */
+}
+
 .card-body {
   text-align: start !important;
+  border: #221601 solid 1px;
+  background-color: var(--bg-light);
+  border-radius: 8px;
 }
 
 .profile-card {
