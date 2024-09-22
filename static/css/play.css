@@ -1,0 +1,14 @@
+.learn--note-info {
+	display: flex;
+	flex-direction: row;
+}
+
+.learn--staff {
+	background-color: white;
+}
+
+.learn--chords {
+	background: white;
+	min-height: 5rem;
+	width: 100%;
+}
