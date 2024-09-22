@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'django.contrib.sites',  # Required for django-allauth
+    'cloudinary',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
