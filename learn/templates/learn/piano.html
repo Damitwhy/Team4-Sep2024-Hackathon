@@ -2,18 +2,22 @@
 {% load static %}
 
 {% block extra_js %}
+	<script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
 	<script src="{% static 'js/piano.js' %}" type="text/javascript" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
+	<script src="{% static 'js/staff.js' %}" defer></script>
 {% endblock extra_js %}
 
 {% block content %}
+
+	<div id="output" style="background:white;"></div>
+
 	<div class="container">
 		<div id="piano">
 			<div id="keyboard" class="keys">
 				{% for note, key in keys.items %}
 					{% if "#" in note %}
-						<div class="key white" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-							<div class="black">
-							</div>
+						<div class="key black" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
 						</div>
 					{% else %}
 						<div class="key white" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
@@ -23,4 +27,5 @@
 			</div>
 		</div>
 	</div>
+	
 {% endblock %}
