@@ -1,0 +1,18 @@
+.learn-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.learn-container--info {
+	display: flex;
+	flex-direction: column;
+	background: var(--background-color);
+}
+
+.info--staff {
+	background-color: #BCB8B1;
+}
+
+.info--text {
+	color: #463F3A !important;
+}

@@ -6,26 +6,37 @@
 	<script src="{% static 'js/piano.js' %}" type="text/javascript" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/tonal/browser/tonal.min.js"></script>
 	<script src="{% static 'js/staff.js' %}" defer></script>
+	<script src="https://unpkg.com/tonal@latest"></script>
+
 {% endblock extra_js %}
 
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static "css/play.css" %}">
+{% endblock extra_css %}
+
 {% block content %}
-
-	<div id="output" style="background:white;"></div>
-
-	<div class="container">
-		<div id="piano">
-			<div id="keyboard" class="keys">
-				{% for note, key in keys.items %}
-					{% if "#" in note %}
-						<div class="key black" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-						</div>
-					{% else %}
-						<div class="key white" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
-						</div>
-					{% endif %}
-				{% endfor %}
-			</div>
-		</div>
-	</div>
+	<div class="learn-container">
 	
+			<div class="learn-container--keyboard">
+				<div id="piano">
+					<div id="keyboard" class="keys">
+						{% for note, key in keys.items %}
+							{% if "#" in note %}
+								<div class="key black" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
+								</div>
+							{% else %}
+								<div class="key white" id="{{ note }}" data-note="{{ note }}" data-key="{{ key }}">
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			
+			<div class="learn-container--info">
+				<div id="output" class="info--staff"></div>
+				<div id="chordDisplay" class="info--text"></div>
+			</div>
+
+	</div>
 {% endblock %}

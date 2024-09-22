@@ -3,7 +3,7 @@
 :root {
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
-  --background-color: #221601;
+  --background-color: #F4F3EE;
   --text-color: #fffffff5;
   --border-color: #bdc3c7;
   --accent-1: #f4f3ee;
@@ -22,7 +22,6 @@
 /* Apply the color variables */
 body {
   background-color: var(--background-color);
-  color: var(--text-color);
   font-family: 'Nunito Sans', sans-serif;
 
   margin: 0;
