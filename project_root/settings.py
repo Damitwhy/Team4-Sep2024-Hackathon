@@ -14,7 +14,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Other settings...
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = False # os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -106,6 +106,9 @@ else:
         'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
     }
     print('Production database')
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
