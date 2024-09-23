@@ -1,195 +1,257 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="learn-container">
-  <h1>Classical Music Instruments</h1>
-  <p class="description">
-    This page is designed to help you learn about some of the most important instruments in classical music. Flip the cards to discover what each instrument is, what it does, and how it is played in an orchestra or solo performance.
-  </p>
+    <div class="learn-container">
+        <h1>
+            Classical Music Instruments
+        </h1>
+        <p class="description">
+            This page is designed to help you learn about some of the most important instruments in classical music. Flip the cards to discover what each instrument is, what it does, and how it is played in an orchestra or solo performance.
+        </p>
 
-  <div class="container">
-    <div class="row">
-      <!-- Violin -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/violin.webp' %}" alt="Violin">
+        <div class="container">
+            <div class="row">
+                <!-- Violin -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/violin.webp' %}"
+                                     alt="Violin">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Violin
+                                </h2>
+                                <p>
+                                    The violin is a small string instrument played with a bow. It produces a high-pitched, beautiful tone and is often used to play the melody in orchestras. By moving the bow across the strings and pressing your fingers on the fingerboard, you can create different notes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cello -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/cello.webp' %}"
+                                     alt="Cello">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Cello
+                                </h2>
+                                <p>
+                                    The cello is a larger string instrument with a rich, warm sound. It is played while seated and held between the knees. Like the violin, it uses a bow to produce sound, but it plays deeper notes, often providing harmony in an orchestra.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flute -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/flute.webp' %}"
+                                     alt="Flute">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Flute
+                                </h2>
+                                <p>
+                                    The flute is a woodwind instrument made of metal. To play, you blow across a hole at the top while pressing down keys to change the notes. It produces light, airy sounds and is often used to play high-pitched melodies in orchestras.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bassoon -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/bassoon.webp' %}"
+                                     alt="Bassoon">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Bassoon
+                                </h2>
+                                <p>
+                                    The bassoon is a long woodwind instrument with a deep, rich sound. It is played by blowing into a double reed while pressing various keys to change the notes. It often plays bass lines in orchestras, providing depth to the music.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trumpet -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/trumpet.webp' %}"
+                                     alt="Trumpet">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Trumpet
+                                </h2>
+                                <p>
+                                    The trumpet is a brass instrument known for its bright, clear sound. To play it, you buzz your lips into the mouthpiece and press valves to change the pitch. Trumpets are often used to play fanfares and bold melodies in orchestras and bands.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trombone -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/trombone.webp' %}"
+                                     alt="Trombone">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Trombone
+                                </h2>
+                                <p>
+                                    The trombone is a brass instrument that uses a sliding mechanism to change notes. By sliding the tubing in and out, you can control the pitch. It produces a strong, resonant sound and is often used in orchestras and jazz bands.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timpani -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/timpani.webp' %}"
+                                     alt="Timpani">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Timpani
+                                </h2>
+                                <p>
+                                    The timpani are large drums that are tuned to specific notes. They are played by striking the drumhead with mallets, and are used to add powerful rhythms and dramatic effects in orchestras.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cymbals -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/cymbals.webp' %}"
+                                     alt="Cymbals">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Cymbals
+                                </h2>
+                                <p>
+                                    Cymbals are large metal discs that are clashed together to create a loud, crashing sound. They are used to emphasize important moments in the music, creating dramatic effects in both orchestras and bands.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harpsichord -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/harpsichord.webp' %}"
+                                     alt="Harpsichord">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Harpsichord
+                                </h2>
+                                <p>
+                                    The harpsichord is an early keyboard instrument, similar to a piano. Instead of hammers, its keys cause strings to be plucked, giving it a distinctive, delicate sound. It is mostly used in Baroque music.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organ -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/organ.webp' %}"
+                                     alt="Organ">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Organ
+                                </h2>
+                                <p>
+                                    The organ is a large keyboard instrument with multiple rows of pipes. It produces sound by pushing air through the pipes when the keys are pressed. It is often used in churches and concert halls for its grand, powerful sound.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harp -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/harp.webp' %}"
+                                     alt="Harp">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Harp
+                                </h2>
+                                <p>
+                                    The harp is a tall, triangular instrument with many strings. Each string produces a different note, and you play it by plucking the strings with your fingers. It creates a soft, flowing sound often used in orchestras and solo performances.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guitar -->
+                <div class="col-md-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="{% static 'images/guitar.webp' %}"
+                                     alt="Guitar">
+                            </div>
+                            <div class="flip-card-back">
+                                <h2>
+                                    Guitar
+                                </h2>
+                                <p>
+                                    The guitar is a string instrument that can be played by plucking or strumming the strings with your fingers or a pick. It is used in many styles of music, from classical to modern, and is known for its rich tone.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="flip-card-back">
-              <h2>Violin</h2>
-              <p>The violin is a small string instrument played with a bow. It produces a high-pitched, beautiful tone and is often used to play the melody in orchestras. By moving the bow across the strings and pressing your fingers on the fingerboard, you can create different notes.</p>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Cello -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/cello.webp' %}" alt="Cello">
-            </div>
-            <div class="flip-card-back">
-              <h2>Cello</h2>
-              <p>The cello is a larger string instrument with a rich, warm sound. It is played while seated and held between the knees. Like the violin, it uses a bow to produce sound, but it plays deeper notes, often providing harmony in an orchestra.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Flute -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/flute.webp' %}" alt="Flute">
-            </div>
-            <div class="flip-card-back">
-              <h2>Flute</h2>
-              <p>The flute is a woodwind instrument made of metal. To play, you blow across a hole at the top while pressing down keys to change the notes. It produces light, airy sounds and is often used to play high-pitched melodies in orchestras.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bassoon -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/bassoon.webp' %}" alt="Bassoon">
-            </div>
-            <div class="flip-card-back">
-              <h2>Bassoon</h2>
-              <p>The bassoon is a long woodwind instrument with a deep, rich sound. It is played by blowing into a double reed while pressing various keys to change the notes. It often plays bass lines in orchestras, providing depth to the music.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Trumpet -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/trumpet.webp' %}" alt="Trumpet">
-            </div>
-            <div class="flip-card-back">
-              <h2>Trumpet</h2>
-              <p>The trumpet is a brass instrument known for its bright, clear sound. To play it, you buzz your lips into the mouthpiece and press valves to change the pitch. Trumpets are often used to play fanfares and bold melodies in orchestras and bands.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Trombone -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/trombone.webp' %}" alt="Trombone">
-            </div>
-            <div class="flip-card-back">
-              <h2>Trombone</h2>
-              <p>The trombone is a brass instrument that uses a sliding mechanism to change notes. By sliding the tubing in and out, you can control the pitch. It produces a strong, resonant sound and is often used in orchestras and jazz bands.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Timpani -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/timpani.webp' %}" alt="Timpani">
-            </div>
-            <div class="flip-card-back">
-              <h2>Timpani</h2>
-              <p>The timpani are large drums that are tuned to specific notes. They are played by striking the drumhead with mallets, and are used to add powerful rhythms and dramatic effects in orchestras.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cymbals -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/cymbals.webp' %}" alt="Cymbals">
-            </div>
-            <div class="flip-card-back">
-              <h2>Cymbals</h2>
-              <p>Cymbals are large metal discs that are clashed together to create a loud, crashing sound. They are used to emphasize important moments in the music, creating dramatic effects in both orchestras and bands.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Harpsichord -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/harpsichord.webp' %}" alt="Harpsichord">
-            </div>
-            <div class="flip-card-back">
-              <h2>Harpsichord</h2>
-              <p>The harpsichord is an early keyboard instrument, similar to a piano. Instead of hammers, its keys cause strings to be plucked, giving it a distinctive, delicate sound. It is mostly used in Baroque music.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Organ -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/organ.webp' %}" alt="Organ">
-            </div>
-            <div class="flip-card-back">
-              <h2>Organ</h2>
-              <p>The organ is a large keyboard instrument with multiple rows of pipes. It produces sound by pushing air through the pipes when the keys are pressed. It is often used in churches and concert halls for its grand, powerful sound.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Harp -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/harp.webp' %}" alt="Harp">
-            </div>
-            <div class="flip-card-back">
-              <h2>Harp</h2>
-              <p>The harp is a tall, triangular instrument with many strings. Each string produces a different note, and you play it by plucking the strings with your fingers. It creates a soft, flowing sound often used in orchestras and solo performances.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Guitar -->
-      <div class="col-md-4">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="{% static 'images/guitar.webp' %}" alt="Guitar">
-            </div>
-            <div class="flip-card-back">
-              <h2>Guitar</h2>
-              <p>The guitar is a string instrument that can be played by plucking or strumming the strings with your fingers or a pick. It is used in many styles of music, from classical to modern, and is known for its rich tone.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
 {% endblock %}
