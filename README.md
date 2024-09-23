@@ -25,6 +25,14 @@ Team members:
 
 ## Wireframes
 
+Home page
+
+![screenshot](documentation/wireframe-home.png)
+
+Piano/play page
+
+![screenshot](documentation/wireframe-play.png)
+
 ## User Stories
 
 ### Homepage
