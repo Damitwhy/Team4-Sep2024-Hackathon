@@ -315,5 +315,15 @@ We started by coming together and creating wireframes to have an initial idea of
 New issues were created and assigned as the project was progressing when new tasks arose.
 
 ## Credits
-* [Bing image creator](https://www.bing.com/images/create?FORM=GDPGLP)
-* [Tiny png image compressor](https://tinypng.com/)
+
+### Content
+- [Tiny png](https://tinypng.com/) image compressor
+- [Tone.js](https://tonejs.github.io/) web audio framework for creating interactive music in the browser.
+- [Tone.js-instruments](https://github.com/nbrosowsky/tonejs-instruments) sample library used for piano sounds.
+- [Tone.js-tonal](https://github.com/tonaljs/tonal) library for music theory, and functions to manipulate tonal elements.
+- [Staff.js](https://github.com/instrumentbible/staff.js/) library  for music staff.
+- [Vexflow](https://github.com/0xfe/vexflow) library for rendering music notation.
+
+### Media
+- [ChatGPT](https://chatgpt.com/) used for image generation.
+- [Bing](https://www.bing.com/images/create?FORM=GDPGLP) used for image generation.
