@@ -308,6 +308,12 @@ There are no significant differences between local vs deployed version.
 
 ## Agile Development Process
 
+[GitHub Projects](https://github.com/users/Damitwhy/projects/6/) served as an Agile tool for this project.
+
+We started by coming together and creating wireframes to have an initial idea of the project. Once the ideation was complete, we divided up the tasks, and created issues for each of them. Issues were assigned, and the progess was tracked on the project board.
+
+New issues were created and assigned as the project was progressing when new tasks arose.
+
 ## Credits
 * [Bing image creator](https://www.bing.com/images/create?FORM=GDPGLP)
 * [Tiny png image compressor](https://tinypng.com/)
