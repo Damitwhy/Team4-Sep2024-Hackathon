@@ -125,10 +125,20 @@ For all testing, please refer to the [TESTING.md](https://github.com/Damitwhy/Te
 
 ## Known Bugs
 
-- **Staff Alignment Issue**: The staff alignment on the piano page may be incorrect. Refreshing the page in developer mode temporarily fixes it. For best results, use smaller screens and refresh.
-- **Mobile Touch Optimization**: The piano is not fully optimized for mobile touch screens, causing some keys to not respond as expected.
-- **Mouse Interaction Bug**: When playing with a mouse, holding down one key and moving the mouse over another can cause the first key to get stuck.
-- **Sustain Pedal (Spacebar) Issue**: Holding down the spacebar to sustain notes may cause the window to scroll down, especially on screens with a resolution of 1080p or lower.
+1. [Staff Alignment](https://github.com/Damitwhy/Team4-Sep2024-Hackathon/issues/85)
+
+   - Staff alignment may be incorrect. Refreshing the page can temporarily fix it. For best results, use smaller screens and refresh.
+
+2. [Mobile Touch](https://github.com/Damitwhy/Team4-Sep2024-Hackathon/issues/87)
+
+   - The piano isn't fully optimized for mobile. Some keys may not respond properly.
+
+3. [Mouse Interaction](https://github.com/Damitwhy/Team4-Sep2024-Hackathon/issues/86)
+
+   - Holding one key while moving the mouse over another may cause the first key to stick.
+
+4. [Sustain Pedal (Spacebar)](https://github.com/Damitwhy/Team4-Sep2024-Hackathon/issues/88)
+   - Using the spacebar to sustain notes may scroll the window on screens 1080p and below.
 
 ## Deployment
 
