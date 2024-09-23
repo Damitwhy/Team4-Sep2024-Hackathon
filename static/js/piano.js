@@ -1,70 +1,108 @@
-// IIFE to prevent global namespace pollution
 (function () {
+  const keyboard = document.querySelector('#keyboard');
+  const keyElements = document.querySelectorAll('.key');
+  const pressedKeys = new Set();
+  let sustainPedal = false;
 
-	const keyboard = document.querySelector('#keyboard');
+  const sampler = createSampler();
 
-	const keyElements = document.querySelectorAll('.key');
-	const sampler = new Tone.Sampler({
-		urls: {
-			"C4": "C4.mp3",
-			"D#4": "Ds4.mp3",
-			"F#4": "Fs4.mp3",
-			"A4": "A4.mp3",
-			"C5": "C5.mp3",
-			"D#5": "Ds5.mp3",
-		},
-		baseUrl: "https://tonejs.github.io/audio/salamander/",
-		onload: () => {
-			console.log('Sampler loaded');
-		}
-	}).toDestination();
+  // Initialize sampler with sound files
+  function createSampler() {
+    return new Tone.Sampler({
+      urls: {
+        C4: 'C4.mp3',
+        'D#4': 'Ds4.mp3',
+        'F#4': 'Fs4.mp3',
+        A4: 'A4.mp3',
+        C5: 'C5.mp3',
+        'D#5': 'Ds5.mp3',
+      },
+      baseUrl: 'https://tonejs.github.io/audio/salamander/',
+      onload: () => console.log('Sampler loaded'),
+    }).toDestination();
+  }
 
-	keyboard.addEventListener("click", e => {
-		const key = e.target.dataset.note;
-		sampler.triggerAttackRelease(`${key}4`, "8n");
-	});
+  // Handle mouse click events for triggering notes
+  function handleMouseDown(e) {
+    const key = e.target.dataset.note;
+    if (key) {
+      playKey(e.target, key);
+    }
+  }
 
-	keyboard.addEventListener("mouseup", e => {
-		sampler.triggerRelease();
-	});
+  function handleMouseUp(e) {
+    const key = e.target.dataset.note;
+    if (key && !sustainPedal) {
+      releaseKey(e.target, key);
+    }
+  }
 
-	// Set to track pressed keys
-	const pressedKeys = new Set()
+  // Handle keyboard events for triggering notes
+  function handleKeyDown(e) {
+    const keyPressed = e.key.toLowerCase();
+    if (pressedKeys.has(keyPressed)) return;
 
-	// Handle keydown event
-	document.addEventListener("keydown", (e) => {
-		const keyPressed = e.key; // the key that was pressed (e.g., "a", "s", etc.)
-		
-		// If the key is already pressed, ignore further keydown events
-		if (pressedKeys.has(keyPressed)) {
-			return;
-		}
+    pressedKeys.add(keyPressed);
 
-		pressedKeys.add(keyPressed); // Mark the key as pressed
+    if (keyPressed === ' ') {
+      sustainPedal = true;
+      return;
+    }
 
-		keyElements.forEach((key) => {
-			// Check if the key element's data-key matches the keyPressed
-			if (key.dataset.key === keyPressed) {
-				key.classList.add('active');  // Add the 'active' class for styling when key is pressed
-				sampler.triggerAttack(`${key.dataset.note}4`, "8n");  // Play the note using Tone.js
-			}
-			
-		});
-	});
+    triggerKeyFromKeyboard(keyPressed);
+  }
 
-	// Handle keyup event
-	document.addEventListener("keyup", (e) => {
-		const keyReleased = e.key;  // the key that was released
+  function handleKeyUp(e) {
+    const keyReleased = e.key.toLowerCase();
+    pressedKeys.delete(keyReleased);
 
-		pressedKeys.delete(keyReleased); // Mark the key as released
+    if (keyReleased === ' ') {
+      sustainPedal = false;
+      releaseAllKeys();
+      return;
+    }
 
-		keyElements.forEach((key) => {
-			// Check if the key element's data-key matches the keyReleased
-			if (key.dataset.key === keyReleased) {
-				key.classList.remove('active');  // Remove the 'active' class when key is released
-				sampler.triggerRelease();  // Release the note using Tone.js
-			}
-		});
-	});
+    releaseKeyFromKeyboard(keyReleased);
+  }
 
+  // Trigger note functions
+  function playKey(element, note) {
+    sampler.triggerAttack(`${note}4`);
+    element.classList.add('active');
+  }
+
+  function releaseKey(element, note) {
+    sampler.triggerRelease(`${note}4`);
+    element.classList.remove('active');
+  }
+
+  function triggerKeyFromKeyboard(keyPressed) {
+    keyElements.forEach((keyElement) => {
+      if (keyElement.dataset.key === keyPressed) {
+        playKey(keyElement, keyElement.dataset.note);
+      }
+    });
+  }
+
+  function releaseKeyFromKeyboard(keyReleased) {
+    keyElements.forEach((keyElement) => {
+      if (keyElement.dataset.key === keyReleased && !sustainPedal) {
+        releaseKey(keyElement, keyElement.dataset.note);
+      }
+    });
+  }
+
+  function releaseAllKeys() {
+    keyElements.forEach((keyElement) => {
+      if (!pressedKeys.has(keyElement.dataset.key)) {
+        releaseKey(keyElement, keyElement.dataset.note);
+      }
+    });
+  }
+
+  // Event listeners
+  keyboard.addEventListener('mousedown', handleMouseDown);
+  keyboard.addEventListener('mouseup', handleMouseUp);
+  document.addEventListener('keydown', handleKeyDown);
+  document.addEventListener('keyup', handleKeyUp);
 })();
