@@ -51,8 +51,18 @@ Team members:
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the site design and layout.
+- [JavaScript](https://www.javascript.com) used for user interaction and piano sounds.
 - [Git](https://git-scm.com) used for version control.
 - [GitHub](https://github.com) used for secure online code storage.
+- [Python](https://www.python.org) used as the back-end programming language.
+- [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
+- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
+- [Django](https://www.djangoproject.com) used as the Python framework for the site.
+- [PostgreSQL by Code Institute](https://dbs.ci-dbs.net) used as the Postgres database from Code Institute.
+- [WhiteNoise](https://whitenoise.readthedocs.io) used for serving static files with Heroku.
+- [Cloudinary](https://cloudinary.com) used for online static file storage.
+- [Font Awesome](https://fontawesome.com) used for the favicon.
+- [ChatGPT](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
 ## Deployment
 
