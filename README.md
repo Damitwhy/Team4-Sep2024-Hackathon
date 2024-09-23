@@ -6,6 +6,8 @@
 
 [![GitHub repo size](https://img.shields.io/github/repo-size/Damitwhy/Team4-Sep2024-Hackathon)](https://github.com/Damitwhy/Team4-Sep2024-Hackathon)
 
+---
+
 ## Overview
 
 SonataCraft is a site where you can re-live the glory days of the baroque era, by playing a digital piano with that classic piano sound. The user can also practice sheet music, with the included sheet staff that displays the played notes. A page with information about other classical instruments is also included.
@@ -13,15 +15,20 @@ SonataCraft is a site where you can re-live the glory days of the baroque era, b
 This project was created as a part of the September-24 Hackathon, hosted by Code Institute.
 
 Team members:
+
 - Ken (SCRUM master)
 - Nonty
 - Johan
 - Linus
 - David
 
+---
+
 ## Mockup
 
 ![screenshot](documentation/mockup.png)
+
+---
 
 ## Wireframes
 
@@ -33,27 +40,35 @@ Piano/play page
 
 ![screenshot](documentation/wireframe-play.png)
 
+---
+
 ## User Stories
 
 ### Homepage
-* **As a user,** I want to land on a homepage that clearly introduces the website's purpose so that I can quickly understand what it offers.
-* **Achieved by:** The homepage includes a hero section with a brief introduction about the page, setting the tone for the user experience.
 
-* **As a user,** I want to have a clear choice between "Play" and "Learn" options on the homepage so that I can easily navigate to the section that interests me.
-* **Achieved by:** The "Choose Your Path" section on the homepage provides two distinct buttons: "Play" and "Learn."
+- **As a user,** I want to land on a homepage that clearly introduces the website's purpose so that I can quickly understand what it offers.
+- **Achieved by:** The homepage includes a hero section with a brief introduction about the page, setting the tone for the user experience.
+
+- **As a user,** I want to have a clear choice between "Play" and "Learn" options on the homepage so that I can easily navigate to the section that interests me.
+- **Achieved by:** The "Choose Your Path" section on the homepage provides two distinct buttons: "Play" and "Learn."
 
 ### Play Option
-* **As a user,** I want to be able to play a virtual piano on the "Play" page so that I can experience playing classical piano music.
-* **Achieved by:** The "Play" option directs me to a piano page with an interactive piano that I can play by clicking on the keys.
+
+- **As a user,** I want to be able to play a virtual piano on the "Play" page so that I can experience playing classical piano music.
+- **Achieved by:** The "Play" option directs me to a piano page with an interactive piano that I can play by clicking on the keys.
 
 ### Learn Option
-* **As a user,** I want to learn about classical music instruments on the "Learn" page so that I can understand what each instrument is and how it is played.
-* **Achieved by:** The "Learn" option takes me to a page with flip cards displaying images of classical instruments and detailed descriptions of each, including how they are played and their roles in music.
+
+- **As a user,** I want to learn about classical music instruments on the "Learn" page so that I can understand what each instrument is and how it is played.
+- **Achieved by:** The "Learn" option takes me to a page with flip cards displaying images of classical instruments and detailed descriptions of each, including how they are played and their roles in music.
 
 ### Navigation Bar
-* **As a user,** I want to see navigation options in the navbar so that I can easily access different sections of the website.
 
-* **Achieved by:** The navbar at the top of the page provides links to these sections. The navbar is collapsed as a burger menu on smaller screens.
+- **As a user,** I want to see navigation options in the navbar so that I can easily access different sections of the website.
+
+- **Achieved by:** The navbar at the top of the page provides links to these sections. The navbar is collapsed as a burger menu on smaller screens.
+
+---
 
 ## Features
 
@@ -81,6 +96,7 @@ About us page, with a card for each contributor. Includes links to github repos 
 
 ![screenshot](documentation/about-us.png)
 
+---
 
 ## Tools & Technologies Used
 
@@ -99,6 +115,14 @@ About us page, with a card for each contributor. Includes links to github repos 
 - [Font Awesome](https://fontawesome.com) used for the favicon.
 - [ChatGPT](https://chat.openai.com) used to help debug, troubleshoot, and explain things.
 
+---
+
+## Testing
+
+For all testing, please refer to the [TESTING.md](https://github.com/Damitwhy/Team4-Sep2024-Hackathon/blob/main/TESTING.md) file.
+
+---
+
 ## Deployment
 
 The live deployed application can be found deployed on [Heroku](https://team4-91bfea18c336.herokuapp.com/).
@@ -114,11 +138,12 @@ To obtain my own Postgres Database from Code Institute, I followed these steps:
 - An email was sent to me with my new Postgres Database.
 
 > [!CAUTION]
->  - PostgreSQL databases by Code Institute are only available to CI Students.
->  - You must acquire your own PostgreSQL database through some other method
-> if you plan to clone/fork this repository.
->  - Code Institute students are allowed a maximum of 8 databases.
->  - Databases are subject to deletion after 18 months.
+>
+> - PostgreSQL databases by Code Institute are only available to CI Students.
+> - You must acquire your own PostgreSQL database through some other method
+>   if you plan to clone/fork this repository.
+> - Code Institute students are allowed a maximum of 8 databases.
+> - Databases are subject to deletion after 18 months.
 
 ### WhiteNoise
 
@@ -157,16 +182,16 @@ INSTALLED_APPS = [
 
 #### Generating a cloudinary environment variable
 
-To sign up for cloudinary, visit [Cloudinary.com](https://cloudinary.com). 
+To sign up for cloudinary, visit [Cloudinary.com](https://cloudinary.com).
 
 Once you've created a Cloudinary account and logged-in, follow these series of steps to get your project connected.
 
-- From your Cloudinary dashboard, click  "API keys".
-- Generate a new API key. 
+- From your Cloudinary dashboard, click "API keys".
+- Generate a new API key.
 - Name it and copy your generated API environment variable.
 - Your API Key and API Secret is found in your generated key. The cloud name should be automatically generated.
 - Fill in your environment variable using this format:
-`CLOUDINARY_URL=cloudinary://<your_api_key>:<your_api_secret>@<your_cloud_name>`
+  `CLOUDINARY_URL=cloudinary://<your_api_key>:<your_api_secret>@<your_cloud_name>`
 
 ### Heroku Deployment
 
@@ -182,14 +207,13 @@ Deployment steps are as follows, after account setup:
 
 > [!IMPORTANT]
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
-  
 
-| Key | Value |
-| --- | --- |
-| `CLOUDINARY_URL` | user's own value |
-| `DATABASE_URL` | user's own value |
-| `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
-| `SECRET_KEY` | user's own value |
+| Key                     | Value                                                                |
+| ----------------------- | -------------------------------------------------------------------- |
+| `CLOUDINARY_URL`        | user's own value                                                     |
+| `DATABASE_URL`          | user's own value                                                     |
+| `DISABLE_COLLECTSTATIC` | 1 (_this is temporary, and can be removed for the final deployment_) |
+| `SECRET_KEY`            | user's own value                                                     |
 
 Heroku needs three additional files in order to deploy properly.
 
@@ -201,17 +225,17 @@ Heroku needs three additional files in order to deploy properly.
 
 You can install this project's **requirements** (where applicable) using:
 
--  `pip3 install -r requirements.txt`
+- `pip3 install -r requirements.txt`
 
 If you have your own packages that have been installed, then the requirements file needs updated using:
 
--  `pip3 freeze --local > requirements.txt`
+- `pip3 freeze --local > requirements.txt`
 
 The **Procfile** can be created with the following command:
 
--  `echo web: gunicorn app_name.wsgi > Procfile`
+- `echo web: gunicorn app_name.wsgi > Procfile`
 
--  *replace **app_name** with the name of your primary Django app name; the folder where settings.py is located*
+- _replace **app_name** with the name of your primary Django app name; the folder where settings.py is located_
 
 The **runtime.txt** file needs to know which Python version you're using:
 
@@ -219,7 +243,7 @@ The **runtime.txt** file needs to know which Python version you're using:
 
 2. in the **runtime.txt** file, add your Python version:
 
--  `python-3.12.6`
+- `python-3.12.6`
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
@@ -228,14 +252,14 @@ Either:
 - Select **Automatic Deployment** from the Heroku app.
 
 Or:
-  
+
 - In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
 
-- Set the remote for Heroku: `heroku git:remote -a app_name` (replace *app_name* with your app name)
+- Set the remote for Heroku: `heroku git:remote -a app_name` (replace _app_name_ with your app name)
 
 - After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
 
--  `git push heroku main`
+- `git push heroku main`
 
 The project should now be connected and deployed to Heroku!
 
@@ -243,11 +267,9 @@ The project should now be connected and deployed to Heroku!
 
 This project can be cloned or forked in order to make a local copy on your own system.
 
-For either method, you will need to install any applicable packages found within the *requirements.txt* file.
+For either method, you will need to install any applicable packages found within the _requirements.txt_ file.
 
--  `pip3 install -r requirements.txt`.
-
-  
+- `pip3 install -r requirements.txt`.
 
 You will need to create a new file called `env.py` at the root-level,
 
@@ -261,7 +283,7 @@ Sample `env.py` file:
 ```python
 
 import os
- 
+
 
 os.environ.setdefault("CLOUDINARY_URL", "user's own value")
 
@@ -275,6 +297,7 @@ os.environ.setdefault("SECRET_KEY", "user's own value")
 os.environ.setdefault("DEBUG", "True")
 
 ```
+
 Once the project is cloned or forked, in order to run it locally, you'll need to follow these steps:
 
 - Start the Django app: `python3 manage.py runserver`
@@ -293,9 +316,9 @@ Once the project is cloned or forked, in order to run it locally, you'll need to
 
 If you'd like to backup your database models, use the following command for each model you'd like to create a fixture for:
 
--  `python3 manage.py dumpdata your-model > your-model.json`
+- `python3 manage.py dumpdata your-model > your-model.json`
 
--  *repeat this action for each model you wish to backup*
+- _repeat this action for each model you wish to backup_
 
 #### Cloning
 
@@ -313,11 +336,11 @@ You can clone the repository by following these steps:
 
 6. In your IDE Terminal, type the following command to clone my repository:
 
--  `git clone https://github.com/Damitwhy/Team4-Sep2024-Hackathon.git`
+- `git clone https://github.com/Damitwhy/Team4-Sep2024-Hackathon.git`
 
 7. Press Enter to create your local clone.
 
-Alternatively, if using Gitpod, you can click below to create your own workspace using this repository. 
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Damitwhy/Team4-Sep2024-Hackathon)
 
@@ -349,16 +372,20 @@ We started by coming together and creating wireframes to have an initial idea of
 
 New issues were created and assigned as the project was progressing when new tasks arose.
 
+---
+
 ## Credits
 
 ### Content
+
 - [Tiny png](https://tinypng.com/) image compressor
 - [Tone.js](https://tonejs.github.io/) web audio framework for creating interactive music in the browser.
 - [Tone.js-instruments](https://github.com/nbrosowsky/tonejs-instruments) sample library used for piano sounds.
 - [Tone.js-tonal](https://github.com/tonaljs/tonal) library for music theory, and functions to manipulate tonal elements.
-- [Staff.js](https://github.com/instrumentbible/staff.js/) library  for music staff.
+- [Staff.js](https://github.com/instrumentbible/staff.js/) library for music staff.
 - [Vexflow](https://github.com/0xfe/vexflow) library for rendering music notation.
 
 ### Media
+
 - [ChatGPT](https://chatgpt.com/) used for image generation.
 - [Bing](https://www.bing.com/images/create?FORM=GDPGLP) used for image generation.
