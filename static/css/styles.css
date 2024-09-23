@@ -272,6 +272,7 @@ p {
   border-radius: 15px;
   overflow: hidden;
   max-width: 100%;
+  background-color: var(--bg-light);
 }
 
 .info--text {
