@@ -15,10 +15,12 @@
           href="{% static 'css/play.css' %}">
 {% endblock extra_css %}
 {% block content %}
+    <!-- Piano container -->
     <div class="learn-container">
         <div class="piano-container">
             <ul id="keyboard"
                 class="piano-keys-list">
+                <!-- Generate piano keys dynamically -->
                 {% for note, key in keys.items %}
                     <li class="key piano-keys
                                {% if '#' in note %}
@@ -34,6 +36,7 @@
                 {% endfor %}
             </ul>
         </div>
+        <!-- Display area for music staff and chord information -->
         <div class="learn-container--info">
             <div id="output"
                  class="info--staff">
@@ -43,32 +46,64 @@
             </div>
         </div>
     </div>
-    <div class="container text-white">
-        <h1 class="mb-4">
-            How to play
-        </h1>
-        <h5 class="mb-2">
-            The piano can be played using your mouse or keyboard.
-        </h5>
-        <p class="mb-3">
-            For the chords/notes to be displayed in text and on the music staff, use your keyboard.
-        </p>
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4">
-                White keys (starting at C):
-                <p class="mt-1">
+
+    <!-- Instructions section -->
+    <div class="container text-light mt-2 px-3">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="mb-4">
+                    How to Play
+                </h3>
+                <div class="my-1 font-weight-normal">
+                    You can play the piano using your mouse or keyboard.
+                    <p class="fw-bold text-warning">
+                        Keyboard is recommended.
+                    </p>
+                </div>
+                <p class="lead my-1">
+                    To display chords/notes in text and on the music staff, use your keyboard.
+                </p>
+            </div>
+        </div>
+
+        <!-- Key mappings -->
+        <div class="row mt-2">
+            <div class="col-md-6 text-center">
+                <h5>
+                    <strong>White keys (starting at C):</strong>
+                </h5>
+                <p class="mt-2 lead">
                     A, S, D, F, G, H, J
                 </p>
             </div>
-            <div class="col-md-4">
-                Black keys (starting at C#):
-                <p class="mt-1">
+            <div class="col-md-6 text-center">
+                <h5>
+                    <strong>Black keys (starting at C#):</strong>
+                </h5>
+                <p class="mt-2 lead">
                     W, E, T, Y, U
                 </p>
             </div>
         </div>
-        <h2 class="my-3">
-            Enjoy!
-        </h2>
+
+        <!-- Additional instructions -->
+        <div class="row mt-2">
+            <div class="col-md-12 text-center">
+                <h5 class="mb-2">
+                    <strong>Additional Instructions:</strong>
+                </h5>
+                <ul class="list-unstyled">
+                    <li class="h5 mb-2">
+                        Press and hold the <strong>space bar</strong> to sustain notes.
+                    </li>
+                    <li class="h5">
+                        Release the <strong>space bar</strong> to stop sustaining notes.
+                    </li>
+                </ul>
+                <h3 class="mt-4 font-weight-bold text-warning">
+                    Enjoy!
+                </h3>
+            </div>
+        </div>
     </div>
 {% endblock content %}
