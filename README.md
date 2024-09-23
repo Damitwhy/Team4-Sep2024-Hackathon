@@ -123,6 +123,13 @@ For all testing, please refer to the [TESTING.md](https://github.com/Damitwhy/Te
 
 ---
 
+## Known Bugs
+
+- **Staff Alignment Issue**: The staff alignment on the piano page may be incorrect. Refreshing the page in developer mode temporarily fixes it. For best results, use smaller screens and refresh.
+- **Mobile Touch Optimization**: The piano is not fully optimized for mobile touch screens, causing some keys to not respond as expected.
+- **Mouse Interaction Bug**: When playing with a mouse, holding down one key and moving the mouse over another can cause the first key to get stuck.
+- **Sustain Pedal (Spacebar) Issue**: Holding down the spacebar to sustain notes may cause the window to scroll down, especially on screens with a resolution of 1080p or lower.
+
 ## Deployment
 
 The live deployed application can be found deployed on [Heroku](https://team4-91bfea18c336.herokuapp.com/).
