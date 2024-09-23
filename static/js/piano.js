@@ -102,7 +102,7 @@
 
   // Event listeners
   keyboard.addEventListener('mousedown', handleMouseDown);
-  keyboard.addEventListener('mouseup', handleMouseUp);
+  document.addEventListener('mouseup', handleMouseUp);
   document.addEventListener('keydown', handleKeyDown);
   document.addEventListener('keyup', handleKeyUp);
 })();
