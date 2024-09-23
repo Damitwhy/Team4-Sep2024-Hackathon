@@ -52,7 +52,7 @@ class AudioSetup(models.Model):
 
 # ----- Contributors -----
 class Contributor(models.Model):
-    """Represents a contributor to the project with a profile picture, name, title, description and links"""
+    """Contributor profile with picture, name, title, description and links"""
 
     name = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
