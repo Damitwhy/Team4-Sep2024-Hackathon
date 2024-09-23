@@ -8,7 +8,7 @@
 
 ## Overview
 
-SonataCraft is a site where you can re-live the glory days of the baroque era, by playing a digital piano with that classic piano sound. The user can also practice sheet music, with the included sheet staff that displays the played notes. A page with information other classical instuments is also included.
+SonataCraft is a site where you can re-live the glory days of the baroque era, by playing a digital piano with that classic piano sound. The user can also practice sheet music, with the included sheet staff that displays the played notes. A page with information about other classical instruments is also included.
 
 This project was created as a part of the September-24 Hackathon, hosted by Code Institute.
 
@@ -59,7 +59,7 @@ Piano/play page
 
 ### Home page
 
-Home/landig page with welcome message. Buttons with links to play the piano, or learn about classical instruments.
+Home/landing page with welcome message. Buttons with links to play the piano, or learn about classical instruments.
 
 ![screenshot](documentation/home.png)
 
@@ -345,7 +345,7 @@ There are no significant differences between local vs deployed version.
 
 [GitHub Projects](https://github.com/users/Damitwhy/projects/6/) served as an Agile tool for this project.
 
-We started by coming together and creating wireframes to have an initial idea of the project. Once the ideation was complete, we divided up the tasks, and created issues for each of them. Issues were assigned, and the progess was tracked on the project board.
+We started by coming together and creating wireframes to have an initial idea of the project. Once the ideation was complete, we divided up the tasks, and created issues for each of them. Issues were assigned, and the progress was tracked on the project board.
 
 New issues were created and assigned as the project was progressing when new tasks arose.
 
