@@ -19,7 +19,9 @@ Team members:
 - Linus
 - David
 
-## Usage instructions
+## Mockup
+
+![screenshot](documentation/mockup.png)
 
 ## Wireframes
 
@@ -46,6 +48,31 @@ Team members:
 * **Achieved by:** The navbar at the top of the page provides links to these sections. The navbar is collapsed as a burger menu on smaller screens.
 
 ## Features
+
+### Home page
+
+Home/landig page with welcome message. Buttons with links to play the piano, or learn about classical instruments.
+
+![screenshot](documentation/home.png)
+
+### Piano page
+
+Piano page with a playable piano, that also displays chords + music staff of the played keys. Includes instructions on how to play.
+
+![screenshot](documentation/play.png)
+
+### Learn page
+
+Learn page with cards for different classical instruments. The cards flip on hover, to display informational text.
+
+![screenshot](documentation/learn.png)
+
+### About us page
+
+About us page, with a card for each contributor. Includes links to github repos and LinkedIn.
+
+![screenshot](documentation/about-us.png)
+
 
 ## Tools & Technologies Used
 
